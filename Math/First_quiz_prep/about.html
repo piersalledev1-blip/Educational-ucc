@@ -5,15 +5,16 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About | MAT 101 Quiz Preparation</title>
 <meta name="description" content="About the MAT 101 Quiz Preparation project.">
+<script>try{document.documentElement.dataset.theme=localStorage.getItem('mat101-theme')==='dark'?'dark':'light'}catch(e){}</script>
 <style>
 :root{--ink:#172033;--muted:#657087;--paper:#f5f6fa;--line:#e3e7ef;--blue:#3157d5;--pale:#eaf0ff}
 *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
 .wrap{max-width:760px;margin:auto;padding:30px 20px 60px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:55px}.brand{font-weight:850;font-size:19px;letter-spacing:-.04em}.brand span{color:var(--blue)}nav{display:flex;gap:14px}nav a{font-size:12px;font-weight:700;color:var(--blue);text-decoration:none}.card{background:white;border:1px solid var(--line);border-radius:20px;padding:30px;text-align:center}.profile-container{display:block;width:100%;margin:0 auto 18px;text-align:center}.profile{display:block;width:140px;height:140px;margin:0 auto;border-radius:50%;object-fit:cover;object-position:center;border:4px solid var(--pale);box-shadow:0 8px 24px rgba(23,32,51,.10)}h1{font-size:36px;letter-spacing:-.04em;margin:18px 0 8px}p{color:var(--muted);max-width:570px;margin:10px auto}.tag{display:inline-block;margin-top:10px;padding:7px 11px;border-radius:999px;background:var(--pale);color:var(--blue);font-size:11px;font-weight:800}.links{margin-top:25px}.links a{color:var(--blue);font-weight:700;text-decoration:none}.footer{text-align:center;color:#8a93a5;font-size:11px;margin-top:32px}
-</style>
+[data-theme="dark"]{color-scheme:dark} [data-theme="dark"] body{background:#101521;color:#edf1fa} [data-theme="dark"] .card{background:#1a2333;border-color:#303b50} [data-theme="dark"] p{color:#aab5c8} [data-theme="dark"] .footer{color:#9ba8bd} [data-theme="dark"] .tag{background:#253252;color:#a9bcff} [data-theme="dark"] .profile{border-color:#253252} .theme-toggle{font:700 12px system-ui;padding:8px 11px;border:1px solid var(--line);border-radius:99px;background:white;color:var(--ink);cursor:pointer;white-space:nowrap} [data-theme="dark"] .theme-toggle{background:#202b3e;color:#edf1fa;border-color:#3a4961}</style>
 </head>
 <body>
 <div class="wrap">
-<header class="top"><div class="brand">MAT <span>101</span> / PREP</div><nav><a href="index.html">Quiz</a><a href="privacy.html">Privacy Policy</a></nav></header>
+<header class="top"><div class="brand">MAT <span>101</span> / PREP</div><nav><a href="index.html">Quiz</a><button class="theme-toggle" id="theme-toggle" type="button">☾ Dark mode</button></nav></header>
 <main class="card">
 <div class="profile-container"><img class="profile" loading="eager" decoding="async" src="https://raw.githubusercontent.com/piersalledev1-blip/Educational-ucc/main/Math/First_quiz_prep/file_0000000068fc8246aa5d908c7eca237f.png?v=math101-profile" alt="Piersalle's profile picture"></div>
 <div class="tag">MAT 101 QUIZ PREPARATION</div>
@@ -23,7 +24,7 @@
 <p>I’m still improving the site, so if you notice a bug or something that is incorrect, please let me know using the contact number below.</p>
 <p class="links"><a href="index.html">Back to the quiz</a></p>
 </main>
-<footer class="footer">MAT 101 Quiz Preparation · About · <a href="privacy.html">Privacy Policy</a><br>Please contact 0559411844 if you find any bugs or anything incorrect.</footer>
+<footer class="footer">MAT 101 Quiz Preparation · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a><br>Please contact 0559411844 if you find any bugs or anything incorrect.</footer>
 </div>
-</body>
+<script>(()=>{const key='mat101-theme';const btn=document.getElementById('theme-toggle');if(!btn)return;function apply(theme){document.documentElement.dataset.theme=theme;btn.textContent=theme==='dark'?'☀ Light mode':'☾ Dark mode';btn.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');btn.setAttribute('aria-pressed',String(theme==='dark'));try{localStorage.setItem(key,theme)}catch(e){}}apply(document.documentElement.dataset.theme||'light');btn.addEventListener('click',()=>apply(document.documentElement.dataset.theme==='dark'?'light':'dark'))})();</script></body>
 </html>
