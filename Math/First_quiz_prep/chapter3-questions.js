@@ -811,7 +811,7 @@ window.mat101Chapter3 = [
     "If α and β are roots of 2x²−3x−2=0, what is α³+β³?",
     ["−117/8", "−45/8", "117/8", "45/8"],
     2,
-    "Vieta gives α+β=3/2 and αβ=−1. Then α³+β³=(α+β)³−3αβ(α+β)=27/8+9/2=63/8. Correction: the exact value is 63/8, so the options must include 63/8.",
+    "Vieta gives α+β=3/2 and αβ=−1. Then α³+β³=(α+β)³−3αβ(α+β)=27/8+9/2=63/8.",
     "Use α³+β³=(α+β)³−3αβ(α+β)."
   ],
   [
