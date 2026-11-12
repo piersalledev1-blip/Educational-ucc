@@ -33,15 +33,15 @@
 .progress-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:12px;color:var(--muted);margin-top:auto}.progress-meta strong{color:var(--ink)}.progress-track{height:7px;background:#e7ebf3;border-radius:99px;overflow:hidden;margin:8px 0 0}.progress-fill{height:100%;background:var(--blue);border-radius:99px;transition:width .2s ease}.card.completed{border-color:#8fd0b2;background:#f4fbf7}.card.completed .num,.card.completed .progress-meta strong{color:var(--green)}.completed-badge{font-size:11px;font-weight:800;color:var(--green);letter-spacing:.04em}.combined-card{grid-column:1/-1}.combined-card p{max-width:720px}[data-theme="dark"] .card.completed{background:#17382f;border-color:#286c56}[data-theme="dark"] .progress-track{background:#303b50}
 .venn-wrap{margin:12px 0 4px;overflow-x:auto}.venn{display:block;width:100%;max-width:520px;min-width:300px;height:auto;margin:auto;color:var(--ink)}.venn-note{font-size:.88rem;line-height:1.45;margin:8px 2px 0;color:var(--muted)}.solution p{white-space:pre-wrap}</style></head><body><div class="wrap">
 <header class="top"><div class="brand">MAT<span>101</span> / PREP</div><div class="topright"><span class="pill" id="badge">Saved on this device</span><button class="theme-toggle" id="theme-toggle" type="button">☾ Dark mode</button></div></header>
-<main id="home"><section class="hero"><div class="eyebrow">University mathematics · UCC</div><h1>Lets do our best</h1><p class="muted">Practise the MAT 101 textbook chapters with objective questions, clear solutions and progress checkpoints.</p></section>
+<main id="home"><section class="hero"><div class="eyebrow">University mathematics · UCC</div><h1>Lets do our best</h1><p class="muted">Practise the MAT 101 textbook chapters with objective questions, clear solutions and progress checkpoints.</p><p class="small" style="margin-top:10px"><a href="https://drive.google.com/drive/folders/1y_heT0SOlIEVok_DWQEro_ptbjFI-cvJ?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px">Browse and download resources from my drive</a></p></section>
 
 
 <div class="head"><h2>Choose a chapter</h2><p>Each chapter includes a question bank, with extra questions where needed to cover the textbook fully.</p></div>
 <div class="grid">
-<article class="card" id="card-ch1"><div class="num">CHAPTER 01 · TEST MODE</div><h3>Sets</h3><p>Sets and operations: union, intersection, set laws, complements, inclusion–exclusion and Cartesian products.</p><button class="primary" onclick="start('ch1')">Open · 50 questions</button><div class="progress-meta"><span id="progress-ch1">0/50 · 0%</span><strong id="status-ch1"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch1"></div></div></article>
-<article class="card" id="card-ch2"><div class="num">CHAPTER 02 · TEST MODE</div><h3>The Real Number System</h3><p>Number sets, real-number properties, rational and irrational numbers, absolute value and intervals.</p><button class="primary" onclick="start('ch2')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch2">0/58 · 0%</span><strong id="status-ch2"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch2"></div></div></article>
-<article class="card" id="card-ch3"><div class="num">CHAPTER 03 · TEST MODE</div><h3>Linear and Quadratic Functions</h3><p>Linear functions, gradients, interpolation, quadratic graphs, completing the square, roots and coefficient relationships.</p><button class="primary" onclick="start('ch3')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch3">0/58 · 0%</span><strong id="status-ch3"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch3"></div></div></article>
-<article class="card" id="card-ch4"><div class="num">CHAPTER 04 · TEST MODE</div><h3>Polynomial Functions</h3><p>Polynomial properties and operations, division, factor and remainder theorems, multiplicities, rational zeros and roots–coefficients relationships.</p><button class="primary" onclick="start('ch4')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch4">0/58 · 0%</span><strong id="status-ch4"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch4"></div></div></article>
+<article class="card" id="card-ch1"><div class="num">CHAPTER 01 · TEST MODE</div><h3>Sets</h3><p>Sets and operations: union, intersection, set laws, complements, inclusion–exclusion and Cartesian products.</p><button class="primary" onclick="start('ch1')">Open · 50 questions</button><div class="progress-meta"><span id="progress-ch1">0% progress</span><strong id="status-ch1"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch1"></div></div></article>
+<article class="card" id="card-ch2"><div class="num">CHAPTER 02 · TEST MODE</div><h3>The Real Number System</h3><p>Number sets, real-number properties, rational and irrational numbers, absolute value and intervals.</p><button class="primary" onclick="start('ch2')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch2">0% progress</span><strong id="status-ch2"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch2"></div></div></article>
+<article class="card" id="card-ch3"><div class="num">CHAPTER 03 · TEST MODE</div><h3>Linear and Quadratic Functions</h3><p>Linear functions, gradients, interpolation, quadratic graphs, completing the square, roots and coefficient relationships.</p><button class="primary" onclick="start('ch3')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch3">0% progress</span><strong id="status-ch3"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch3"></div></div></article>
+<article class="card" id="card-ch4"><div class="num">CHAPTER 04 · TEST MODE</div><h3>Polynomial Functions</h3><p>Polynomial properties and operations, division, factor and remainder theorems, multiplicities, rational zeros and roots–coefficients relationships.</p><button class="primary" onclick="start('ch4')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch4">0% progress</span><strong id="status-ch4"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch4"></div></div></article>
 <article class="card combined-card" id="card-combined"><div class="num">COMBINED · TEST MODE</div><h3>Omega Quiz</h3><p>Combines all four chapters into one randomized question bank: Sets and Operations, The Real Number System, Linear and Quadratic Functions, and Polynomial Functions. 224 questions in total.</p><button class="primary" onclick="start('combined')">Open · 224 questions</button><div class="progress-meta"><span id="progress-combined">0/224 · 0%</span><strong id="status-combined"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-combined"></div></div></article>
 </div><section class="notice"><b>Progress:</b> Your quiz progress is saved automatically in this browser. It remains on this device and is not uploaded to an account.</section><div class="notice"><b>Question banks:</b> Chapter 1 has 50 questions. Chapters 2, 3 and 4 each have 58 original, textbook-aligned questions to improve subtopic coverage. Each chapter has its own saved browser progress. Omega Quiz combines all four chapter banks in one randomized quiz.</div></main>
 <section id="quiz" class="quiz hidden"><div class="quizhead"><div><div class="muted" id="chapter-label">Chapter 1 · Sets</div><div class="small" id="count">Question 1 of 50</div></div><div class="quizhead-actions"><span class="pill elapsed-timer" id="elapsed-timer" role="timer" aria-live="off">Time remaining 02:00:00</span><button class="quiet exit-quiz" id="exit-quiz" type="button">Quit quiz</button></div></div><div class="track"><div class="fill" id="fill"></div></div><div class="quizcard" id="qcard"><div class="meta"><span id="topic"></span><span id="difficulty"></span></div><h2 id="stem"></h2><p class="small" id="quiz-instructions" style="margin:0 0 12px">You have up to 90 minutes to complete this attempt. Choose an option, then submit your answer. Your score is revealed after every 10 questions.</p><div class="options" id="options"></div><div class="feedback hidden" id="feedback"></div><div class="controls"><div class="right"><button class="quiet" id="skip">Skip</button><button class="quiet" id="dont-know">I DON’T KNOW</button><button class="primary" id="submit" disabled>Submit answer</button><button class="quiet hidden" id="review-prev" type="button">Previous question</button><button class="quiet hidden" id="review-return" type="button">Back to results</button><button class="primary hidden" id="next">Next question</button></div></div></div><div class="quizcard checkpoint hidden" id="checkpoint"></div></section>
@@ -68,7 +68,7 @@ const combinedById=new Map();
 Object.entries(combinedBanks).forEach(([key,bank])=>bank.forEach((q,n)=>combinedById.set(key+"-"+n,q)));
 let activeOrder=null;
 
-let i=0,answers=[],shown=false,checkpointPending=false,reviewMode=false,selectedChoice=null;
+let i=0,answers=[],shown=false,checkpointPending=false,reviewMode=false,selectedChoice=null,maxReached=0;
 const DEFAULT_QUIZ_LIMIT_MS=2*60*60*1000;function quizLimitFor(chapter){return chapter==="ch1"?90*60*1000:DEFAULT_QUIZ_LIMIT_MS}function quizLimitLabel(chapter){return chapter==="ch1"?"90 minutes":"two hours"}let quizDeadline=0,quizStartedAt=0,deadlineInterval=null,quizEnded=false;
 
 function readState(chapter){
@@ -76,14 +76,16 @@ function readState(chapter){
 }
 function answeredCount(state,total){return Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a&&!a.timeout).length:0)}
 function progressInfo(chapter){
-  const total=chapterTotals[chapter],state=readState(chapter),answered=answeredCount(state,total),correct=Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a?.correct).length:0),percent=Math.round(correct/total*100);
-  return {total,answered,correct,percent,completed:answered===total};
+  const total=chapterTotals[chapter],state=readState(chapter),correct=Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a?.correct).length:0);
+  const reached=Math.min(total,Math.max(Number(state?.maxReached)||0,Number(state?.i)||0,answeredCount(state,total)));
+  const percent=Math.round(reached/total*100),completed=reached>=total;
+  return {total,correct,reached,percent,completed};
 }
 function renderDashboard(){
   Object.keys(chapterTotals).forEach(chapter=>{
     const p=progressInfo(chapter),card=$('card-'+chapter),label=$('progress-'+chapter),fill=$('fill-'+chapter),status=$('status-'+chapter);
     if(!card)return;
-    label.textContent=p.percent+'% grade';
+    label.textContent=p.completed?p.percent+'% · '+p.correct+'/'+p.total:p.percent+'% progress';
     fill.style.width=p.percent+'%';
     card.classList.toggle('completed',p.completed);
     status.textContent=p.completed?'Completed':'';
@@ -99,7 +101,7 @@ function validCombinedOrder(order){
 }
 function bankFromOrder(order){return order.map(id=>combinedById.get(id))}
 function save(){
-  const state={quiz:chapterMeta[activeChapter][1],flowVersion:10,i,answers,checkpointPending,deadlineAt:quizDeadline,startedAt:quizStartedAt};
+  const state={quiz:chapterMeta[activeChapter][1],flowVersion:11,i,answers,checkpointPending,deadlineAt:quizDeadline,startedAt:quizStartedAt,maxReached};
   if(activeChapter==="combined")state.order=activeOrder;
   try{localStorage.setItem('math101-'+activeChapter,JSON.stringify(state));$('badge').textContent='Progress saved in this browser'}catch(error){$('badge').textContent='Browser storage unavailable'}
   renderDashboard();
@@ -122,20 +124,21 @@ function start(chapter="ch1"){
     qs=chapter==="ch1"?chapter1Qs:chapterBanks[chapter];
   }
   if(!Array.isArray(qs)||!qs.length){alert("This question bank could not be loaded.");return}
-  const versionValid=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9||s.flowVersion===10)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
+  const versionValid=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9||s.flowVersion===10||s.flowVersion===11)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
   if(s&&s.quiz===chapterMeta[activeChapter][1]&&!versionValid){
     if(!confirm('This quiz has been updated. Start a fresh attempt?'))return;
     localStorage.removeItem(key);s=null;
     if(chapter==="combined"){activeOrder=freshCombinedOrder();qs=bankFromOrder(activeOrder)}
   }
-  const canResume=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9||s.flowVersion===10)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
+  const canResume=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9||s.flowVersion===10||s.flowVersion===11)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
   let resumed=false;
   if(canResume&&confirm('Resume your saved '+chapterMeta[activeChapter][0]+' attempt? Choose Cancel to start a new attempt with a fresh timer.')){
     resumed=true;i=s.i;answers=s.answers||[];checkpointPending=!!s.checkpointPending;
     if(chapter==="combined"){activeOrder=s.order;qs=bankFromOrder(activeOrder)}
+    maxReached=Math.max(Number(s.maxReached)||0,Number(s.i)||0,answeredCount(s,qs.length));
   }else{
     if(chapter==="combined"){activeOrder=freshCombinedOrder();qs=bankFromOrder(activeOrder)}
-    i=0;answers=[];checkpointPending=false;
+    i=0;answers=[];checkpointPending=false;maxReached=0;
   }
   quizEnded=false;
   if(resumed){
@@ -158,6 +161,7 @@ function start(chapter="ch1"){
 function draw(){
   if(quizDeadline&&Date.now()>=quizDeadline){enforceTimeLimit();return}
   if(i>=qs.length){result(false);return}
+  maxReached=Math.max(maxReached,i+1);
   let q=qs[i];shown=false;selectedChoice=null;
   $('count').textContent='Question '+(i+1)+' of '+qs.length;$('fill').style.width=(i/qs.length*100)+'%';
   $('topic').textContent=q[0];$('difficulty').textContent=q[1];$('stem').textContent=q[2];
@@ -259,12 +263,13 @@ function result(timeExpired=false){
   const skipped=answers.filter(a=>a?.skipped).length,unknown=answers.filter(a=>a?.unknown).length;
   const unanswered=qs.length-attempted,percent=Math.round(correct/qs.length*100),grade=blockLevel(Math.floor(percent/10));
   const reviewCount=qs.filter((q,n)=>!answers[n]?.correct).length,completion=attempted===qs.length?'Completed':'Not completed';
+  maxReached=qs.length;
   $('checkpoint').innerHTML='<div class="eyebrow">'+(timeExpired?'Time limit reached · Final report':'Quiz complete · Final report')+'</div><div class="score">'+percent+'%</div><h2>'+grade+'</h2><p class="muted">'+correct+'/'+qs.length+' correct · '+blockMessage(Math.floor(percent/10))+'</p><div class="stats"><h3>Overall statistics</h3><div class="stat-row"><span>Grade</span><strong>'+percent+'%</strong></div><div class="stat-row"><span>Correct answers</span><strong>'+correct+'/'+qs.length+'</strong></div><div class="stat-row"><span>Incorrect submitted answers</span><strong>'+wrong+'</strong></div><div class="stat-row"><span>Skipped questions</span><strong>'+skipped+'</strong></div><div class="stat-row"><span>I DON’T KNOW responses</span><strong>'+unknown+'</strong></div><div class="stat-row"><span>Unanswered / timed out</span><strong>'+unanswered+'</strong></div><div class="stat-row"><span>Questions attempted</span><strong>'+attempted+'/'+qs.length+'</strong></div><div class="stat-row"><span>Quiz completion</span><strong>'+completion+'</strong></div><h3>Performance by problem type</h3>'+topicStatsHTML(0,qs.length)+'</div><p class="small">The grade is based only on correct answers out of all questions. “Completed” means every question was attempted; it does not mean every answer was correct. The review shows worked solutions for incorrect, skipped and unanswered questions.</p><div class="controls"><button class="secondary" id="download-pdf">Download results (PDF)</button><button class="secondary" id="review-wrong" '+(reviewCount?'':'disabled')+'>Review questions to work on ('+reviewCount+')</button><button class="quiet" id="review-all">Review all questions</button><button class="quiet" id="retake">Retake quiz</button><button class="primary" id="back">Back to chapters</button></div>';
   $('download-pdf').onclick=downloadResultsPDF;
   $('review-wrong').onclick=()=>openMistakeReview(0,qs.length,()=>result());
   $('review-all').onclick=()=>{i=0;reviewMode=true;checkpointPending=false;draw();$('checkpoint').classList.add('hidden');$('qcard').classList.remove('hidden');stop()};
   $('retake').onclick=()=>{if(!confirm('Start a fresh attempt? The previous attempt will be replaced on this device.'))return;localStorage.removeItem('math101-'+activeChapter);if(deadlineInterval!==null){clearInterval(deadlineInterval);deadlineInterval=null}start(activeChapter)};
-  $('back').onclick=()=>{$('quiz').classList.add('hidden');$('home').classList.remove('hidden');i=0;answers=[];checkpointPending=false;reviewMode=false;activeOrder=null;renderDashboard()};
+  $('back').onclick=()=>{$('quiz').classList.add('hidden');$('home').classList.remove('hidden');i=0;answers=[];checkpointPending=false;reviewMode=false;activeOrder=null;maxReached=0;renderDashboard()};
   save()
 }
 renderDashboard();
