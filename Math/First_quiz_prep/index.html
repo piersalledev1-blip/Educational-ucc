@@ -302,13 +302,17 @@ function buildCertificatePDF(data){
   txt('UNIVERSITY MATHEMATICS  |  UCC',W-60,H-73,9,'#657087',true,true);
   txt('CERTIFICATE OF PRACTICE',W/2,H-163,11,tier.accent,true,true);
   txt('Performance Recognition',W/2,H-207,30,'#172033',true,true);
-  txt('This certificate recognises your result in',W/2,H-239,12,'#657087',false,true);
-  const topic=pdfSafe(data.topic),topicSize=topic.length>48?16:topic.length>34?18:21;
-  txt(topic,W/2,H-273,topicSize,'#172033',true,true);
-  line(310,H-293,532,H-293,'#E3E7EF',1);
-  txt('AWARDED LEVEL',W/2,H-324,8,'#657087',true,true);
-  txt(tier.name,W/2,H-350,15,tier.accent,true,true);
-  txt(tier.note,W/2,H-371,10,'#657087',false,true);
+  txt('Congratulations,',W/2,H-239,12,'#657087',false,true);
+  const recipient=pdfSafe(data.name);
+  const recipientSize=recipient.length>34?17:recipient.length>24?20:24;
+  txt(recipient,W/2,H-270,recipientSize,'#172033',true,true);
+  txt('for your performance in',W/2,H-299,11,'#657087',false,true);
+  const topic=pdfSafe(data.topic),topicSize=topic.length>48?15:topic.length>34?17:20;
+  txt(topic,W/2,H-324,topicSize,'#172033',true,true);
+  line(310,H-343,532,H-343,'#E3E7EF',1);
+  txt('AWARDED LEVEL',W/2,H-374,8,'#657087',true,true);
+  txt(tier.name,W/2,H-400,15,tier.accent,true,true);
+  txt(tier.note,W/2,H-421,10,'#657087',false,true);
   rect(335,112,172,112,tier.soft);stroke(tier.accent);commands.push('2 w 335 112 172 112 re S');
   txt(data.percent+'%',W/2,169,43,tier.accent,true,true);
   txt('FINAL SCORE',W/2,145,8,'#657087',true,true);
@@ -333,9 +337,13 @@ function buildCertificatePDF(data){
   return new Blob([pdf],{type:'application/pdf'});
 }
 function downloadResultsPDF(){
+  const name=window.prompt('Enter your full name for the certificate:');
+  if(name===null)return;
+  const fullName=name.trim();
+  if(!fullName){window.alert('Please enter your full name before downloading the certificate.');return}
   const correct=answers.filter(a=>a?.correct).length,percent=Math.round(correct/qs.length*100);
   const attempted=answers.filter(a=>a&&!a.timeout).length;
-  const data={percent,correct,total:qs.length,topic:chapterMeta[activeChapter][0],date:new Date().toLocaleDateString(),completion:attempted===qs.length?'QUIZ COMPLETED':'ATTEMPT ENDED BEFORE COMPLETION'};
+  const data={name:fullName,percent,correct,total:qs.length,topic:chapterMeta[activeChapter][0],date:new Date().toLocaleDateString(),completion:attempted===qs.length?'QUIZ COMPLETED':'ATTEMPT ENDED BEFORE COMPLETION'};
   const blob=buildCertificatePDF(data),url=URL.createObjectURL(blob),a=document.createElement('a');
   a.href=url;a.download='MAT101-'+activeChapter+'-practice-certificate.pdf';
   document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)
