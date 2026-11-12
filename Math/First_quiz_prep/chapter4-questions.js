@@ -16,7 +16,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Polynomial degree · p.47–49",
-    "Challenging",
+    "Average",
     "Let P have degree 5 and Q have degree 2. What is the degree of PQ?",
     [
       "3",
@@ -44,7 +44,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Polynomial degree · p.47–49",
-    "Challenging",
+    "Average",
     "A non-zero polynomial has degree 4. What is the greatest possible number of distinct real zeros?",
     [
       "2",
@@ -129,7 +129,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Polynomial division · p.50",
-    "Challenging",
+    "Average",
     "A polynomial is divided by a quadratic divisor. What is the greatest possible degree of the remainder?",
     [
       "0",
@@ -143,7 +143,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Polynomial division · p.50",
-    "Challenging",
+    "Average",
     "If P(x)=(2x²+1)(x−3)+(4x−7), what is the remainder when P is divided by 2x²+1?",
     [
       "x−3",
@@ -157,7 +157,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Remainder theorem · p.50–51",
-    "Challenging",
+    "Average",
     "A polynomial P is divided by x−4 and leaves remainder 9. What is P(4)?",
     [
       "0",
