@@ -97,13 +97,10 @@ function validCombinedOrder(order){
   return Array.isArray(order)&&order.length===chapterTotals.combined&&order.every(id=>combinedById.has(id))&&new Set(order).size===order.length;
 }
 function bankFromOrder(order){return order.map(id=>combinedById.get(id))}
-window.mat101RenderDashboard=renderDashboard;
-window.mat101OnLocalSave=null;
 function save(){
-  const state={quiz:chapterMeta[activeChapter][1],flowVersion:7,i,answers,secs,paused,checkpointPending,savedAt:new Date().toISOString()};
+  const state={quiz:chapterMeta[activeChapter][1],flowVersion:7,i,answers,secs,paused,checkpointPending};
   if(activeChapter==="combined")state.order=activeOrder;
-  try{localStorage.setItem('math101-'+activeChapter,JSON.stringify(state));if(!window.mat101CurrentUser)$('badge').textContent='Progress saved on this device'}catch(error){$('badge').textContent='Browser storage unavailable'}
-  if(typeof window.mat101OnLocalSave==='function')window.mat101OnLocalSave(activeChapter,state);
+  try{localStorage.setItem('math101-'+activeChapter,JSON.stringify(state));$('badge').textContent='Progress saved in this browser'}catch(error){$('badge').textContent='Browser storage unavailable'}
   renderDashboard();
 }
 function clock(){return [Math.floor(secs/3600),Math.floor(secs%3600/60),secs%60].map(n=>String(n).padStart(2,'0')).join(':')}
