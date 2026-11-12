@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 2 — 50 original questions. Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
+/* MAT 101 Chapter 2 — expanded textbook-coverage bank (58 questions for Chapters 2 and 4; 58 for Chapter 3). Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
 window.mat101Chapter2 = [
   [
     "Number sets · p.19",
@@ -755,5 +755,79 @@ window.mat101Chapter2 = [
     0,
     "AM–GM gives √pq≤9, so pq≤81.",
     "The greatest product for a fixed positive sum occurs when the values are equal."
+  ]
+,
+
+  [
+    "Real-number properties · p.20–22",
+    "Average",
+    "Which statement follows from closure of the real numbers under subtraction?",
+    ["a−b is real for all real a,b", "a/b is real even when b=0", "√a is real for every real a", "a+b is never zero"],
+    0,
+    "The real numbers are closed under subtraction: if a and b are real, then a−b is also real.",
+    "Subtracting two real numbers always gives a real number."
+  ],
+  [
+    "Real-number properties · p.20–22",
+    "Challenging",
+    "If 7x+5=7y+5, which conclusion follows using the cancellation properties of equality?",
+    ["x=y", "x=y+5", "7x=7y+5", "x−y=5"],
+    0,
+    "Subtract 5 from both sides to obtain 7x=7y. Since 7 is non-zero, divide both sides by 7 to get x=y.",
+    "Cancel the equal added terms, then divide by the common non-zero factor."
+  ],
+  [
+    "Real-number properties · p.20–22",
+    "Average",
+    "What is the multiplicative inverse of −8?",
+    ["8", "−1/8", "1/8", "−8"],
+    1,
+    "The multiplicative inverse of a non-zero number a is 1/a. Therefore the inverse of −8 is −1/8.",
+    "Take the reciprocal, keeping the negative sign."
+  ],
+  [
+    "Order properties · p.25–26",
+    "Challenging",
+    "If a<b and b<c, which statement must be true?",
+    ["a<c", "a>c", "a=c", "The order of a and c cannot be determined"],
+    0,
+    "By the transitive property of order, a<b and b<c imply a<c.",
+    "Combine the two inequalities using transitivity."
+  ],
+  [
+    "Order properties · p.25–26",
+    "Challenging",
+    "For any two real numbers a and b, which statement expresses the trichotomy property?",
+    ["At least two of a=b, a<b and a>b must hold", "Exactly one of a=b, a<b and a>b holds", "a must be positive or b must be positive", "a and b must have the same sign"],
+    1,
+    "Trichotomy states that exactly one of equality, less than, or greater than holds for any two real numbers.",
+    "Two real numbers have exactly one of the three possible order relationships."
+  ],
+  [
+    "Irrational numbers · p.25",
+    "Challenging",
+    "Given that √11 is irrational, which expression is guaranteed to be irrational?",
+    ["5+3√11", "5−√121", "3√11−3√11", "√11×√11"],
+    0,
+    "For rational a and non-zero rational c, a+c√b is irrational whenever √b is irrational. Here 5 and 3 are rational and 3 is non-zero.",
+    "A rational number plus a non-zero rational multiple of an irrational radical remains irrational."
+  ],
+  [
+    "Absolute value · p.26–27",
+    "Challenging",
+    "If a=−3 and b=4, what common value is given by |ab| and |a||b|?",
+    ["−12", "−7", "7", "12"],
+    3,
+    "|ab|=|−12|=12, while |a||b|=3×4=12. This illustrates |ab|=|a||b|.",
+    "Take the absolute value of the product, or multiply the two absolute values."
+  ],
+  [
+    "Intervals · p.29–31",
+    "Average",
+    "What is the length of the interval (−3,5), using the textbook's definition of interval length?",
+    ["2", "5", "8", "−8"],
+    2,
+    "The length of an interval with endpoints a and b is b−a. Here 5−(−3)=8.",
+    "Subtract the left endpoint from the right endpoint."
   ]
 ];
