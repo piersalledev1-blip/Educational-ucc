@@ -76,6 +76,7 @@ window.mat101Chapter4 = [
         0,
         -2,
         0,
+        0,
         100
       ],
       "xMin": -2.5,
