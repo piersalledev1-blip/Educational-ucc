@@ -163,7 +163,7 @@ function explain(){
  f.replaceChildren();
  const h=document.createElement('h3');h.textContent=heading;f.append(h);
  const answer=document.createElement('p');answer.textContent='Correct option: '+'ABCD'[q[4]]+'. '+q[3][q[4]];f.append(answer);
- if(isCorrect){const note=document.createElement('p');note.textContent='Your answer is correct. Continue to the next question.';f.append(note);return}
+ if(isCorrect&&!reviewMode){const note=document.createElement('p');note.textContent='Your answer is correct. Continue to the next question.';f.append(note);return}
  const theory=document.createElement('div');theory.className='solution';
  const th=document.createElement('strong');th.textContent='Exam / Theory Solution';theory.append(th);
  const tp=document.createElement('p');tp.textContent=q[5];theory.append(tp);f.append(theory);
