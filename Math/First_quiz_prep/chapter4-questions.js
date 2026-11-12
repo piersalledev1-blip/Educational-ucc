@@ -382,7 +382,7 @@ window.mat101Chapter4 = [
   [
     "Difference of powers · p.56–57",
     "Challenging",
-    "Factorise x⁵−32 completely over the real numbers.",
+    "Apply the difference-of-fifth-powers identity to factorise x⁵−32.",
     [
       "(x−2)(x⁴+2x³+4x²+8x+16)",
       "(x−2)(x+2)(x³+4)",
@@ -390,8 +390,8 @@ window.mat101Chapter4 = [
       "(x+2)(x⁴−2x³+4x²−8x+16)"
     ],
     0,
-    "x⁵−2⁵=(x−2)(x⁴+2x³+4x²+8x+16).",
-    "Apply the difference-of-powers identity with a=2 and n=5."
+    "Since 32=2⁵, use x⁵−2⁵=(x−2)(x⁴+2x³+4x²+8x+16).",
+    "Use the difference-of-powers identity with a=2."
   ],
   [
     "Difference of powers · p.56–57",
