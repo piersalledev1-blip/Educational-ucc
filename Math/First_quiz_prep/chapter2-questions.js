@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 2 — 50 original questions. Grounded in verified textbook pages 19–33; no textbook exercise stems copied. Fields: topic/page, difficulty, prompt, four options, answer index, exam solution, quick solution, optional visual key. */
+/* MAT 101 Chapter 2 — 50 original questions. Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
 window.mat101Chapter2 = [
   [
     "Number sets · p.19",
@@ -390,7 +390,15 @@ window.mat101Chapter2 = [
     ],
     0,
     "|x+2|=6 gives x=4 or x=−8.",
-    "Move six units left and right from −2."
+    "Move six units left and right from −2.",
+    {
+      "type": "numberLine",
+      "min": -10,
+      "max": 10,
+      "initial": -2,
+      "center": -2,
+      "caption": "Move the point and compare its distance from −2."
+    }
   ],
   [
     "Absolute value · p.27–28",
@@ -418,7 +426,16 @@ window.mat101Chapter2 = [
     ],
     0,
     "|x−3|≤4 gives −4≤x−3≤4, so −1≤x≤7.",
-    "Translate distance at most four into a double inequality."
+    "Translate distance at most four into a double inequality.",
+    {
+      "type": "numberLine",
+      "min": -5,
+      "max": 11,
+      "initial": 3,
+      "center": 3,
+      "radius": 4,
+      "caption": "Explore values around the centre and the distance limit."
+    }
   ],
   [
     "Absolute value · p.27–28",
@@ -516,7 +533,20 @@ window.mat101Chapter2 = [
     ],
     2,
     "The common values are greater than −1 and at most 2.",
-    "Keep the overlapping section and preserve endpoint inclusion."
+    "Keep the overlapping section and preserve endpoint inclusion.",
+    {
+      "type": "numberLine",
+      "min": -5,
+      "max": 6,
+      "initial": 0,
+      "marks": [
+        -4,
+        -1,
+        2,
+        5
+      ],
+      "caption": "Use the marked endpoints to reason about interval overlap."
+    }
   ],
   [
     "Intervals · p.29–31",
@@ -586,7 +616,15 @@ window.mat101Chapter2 = [
     ],
     1,
     "The product is positive outside the roots −4 and 3.",
-    "A two-factor product with positive leading coefficient is positive outside the roots."
+    "A two-factor product with positive leading coefficient is positive outside the roots.",
+    {
+      "type": "signChart",
+      "roots": [
+        -4,
+        3
+      ],
+      "caption": "Tap each interval to record the sign you predict for the product."
+    }
   ],
   [
     "Inequalities · p.30–32",
@@ -628,7 +666,16 @@ window.mat101Chapter2 = [
     ],
     0,
     "The critical values are −2, 1/2 and 3. A sign chart gives positive values on (−∞,−2) and (1/2,3).",
-    "Mark the three zeros and test the sign in each interval."
+    "Mark the three zeros and test the sign in each interval.",
+    {
+      "type": "signChart",
+      "roots": [
+        -2,
+        0.5,
+        3
+      ],
+      "caption": "Tap each interval to build your sign chart for the three factors."
+    }
   ],
   [
     "Rational inequalities · p.31–32",
@@ -656,7 +703,16 @@ window.mat101Chapter2 = [
     ],
     0,
     "Using the positive squared common denominator gives (2x−1)(3−x)(x+2)>0. The solution is x<−2 or 1/2<x<3; exclude the original denominator zeros.",
-    "Multiply by the square of the denominators, then use a sign chart."
+    "Multiply by the square of the denominators, then use a sign chart.",
+    {
+      "type": "signChart",
+      "roots": [
+        -2,
+        0.5,
+        3
+      ],
+      "caption": "Record the sign on each interval before selecting a solution."
+    }
   ],
   [
     "Inequalities · p.30–32",
