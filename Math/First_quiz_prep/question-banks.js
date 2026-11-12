@@ -1,4 +1,4 @@
-// The separate chapter files contain the complete, independently audited 50-question banks.
+// The separate chapter files contain the expanded, independently audited 58-question banks.
 const chapterBanks = {
   ch2: window.mat101Chapter2,
   ch3: window.mat101Chapter3,
