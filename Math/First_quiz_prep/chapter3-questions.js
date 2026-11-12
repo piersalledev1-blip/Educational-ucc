@@ -39,7 +39,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "Two lines have gradients 4 and k. They are perpendicular. Find k.",
     [
       "4",
@@ -53,7 +53,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "A line has gradient 0. Which description is correct?",
     [
       "It is vertical",
@@ -109,7 +109,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "What is the y-intercept of the line with gradient −2 passing through (3,1)?",
     [
       "−5",
@@ -132,7 +132,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "Two non-vertical lines are parallel. One has rule y=7x−4. What must be the gradient of the other?",
     [
       "−7",
@@ -146,7 +146,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "A linear function is strictly decreasing on the real numbers. Which condition must hold?",
     [
       "m>0",
@@ -160,7 +160,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear interpolation · p.37–38",
-    "Challenging",
+    "Average",
     "A table gives h(2)=7.5 and h(5)=12. Estimate h(3.8) linearly.",
     [
       "8.7",
@@ -174,7 +174,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "A line through (−2,6) and (4,−3) is:",
     [
       "y=−3x/2+3",
