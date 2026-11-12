@@ -42,9 +42,9 @@
 <article class="card" id="card-ch2"><div class="num">CHAPTER 02 · TEST MODE</div><h3>The Real Number System</h3><p>Number sets, real-number properties, rational and irrational numbers, absolute value and intervals.</p><button class="primary" onclick="start('ch2')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch2">0/58 · 0%</span><strong id="status-ch2"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch2"></div></div></article>
 <article class="card" id="card-ch3"><div class="num">CHAPTER 03 · TEST MODE</div><h3>Linear and Quadratic Functions</h3><p>Linear functions, gradients, interpolation, quadratic graphs, completing the square, roots and coefficient relationships.</p><button class="primary" onclick="start('ch3')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch3">0/58 · 0%</span><strong id="status-ch3"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch3"></div></div></article>
 <article class="card" id="card-ch4"><div class="num">CHAPTER 04 · TEST MODE</div><h3>Polynomial Functions</h3><p>Polynomial properties and operations, division, factor and remainder theorems, multiplicities, rational zeros and roots–coefficients relationships.</p><button class="primary" onclick="start('ch4')">Open · 58 questions</button><div class="progress-meta"><span id="progress-ch4">0/58 · 0%</span><strong id="status-ch4"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-ch4"></div></div></article>
-<article class="card combined-card" id="card-combined"><div class="num">COMBINED · TEST MODE</div><h3>Combined Practice</h3><p>All four chapters in one randomized question bank. 224 questions total, saved in a stable order when you pause and resume.</p><button class="primary" onclick="start('combined')">Open · 224 questions</button><div class="progress-meta"><span id="progress-combined">0/224 · 0%</span><strong id="status-combined"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-combined"></div></div></article>
-</div><section class="notice"><b>Progress:</b> Your quiz progress is saved automatically in this browser. It remains on this device and is not uploaded to an account.</section><div class="notice"><b>Question banks:</b> Chapter 1 has 50 questions. Chapters 2, 3 and 4 each have 58 original, textbook-aligned questions to improve subtopic coverage. Each chapter has its own saved browser progress. Combined Practice uses all four chapter banks in one randomized quiz.</div></main>
-<section id="quiz" class="quiz hidden"><div class="quizhead"><div><div class="muted" id="chapter-label">Chapter 1 · Sets</div><div class="small" id="count">Question 1 of 50</div></div><div class="quizhead-actions"><span class="pill elapsed-timer" id="elapsed-timer" role="timer" aria-live="off">Time remaining 02:00:00</span><button class="quiet exit-quiz" id="exit-quiz" type="button">Quit quiz</button></div></div><div class="track"><div class="fill" id="fill"></div></div><div class="quizcard" id="qcard"><div class="meta"><span id="topic"></span><span id="difficulty"></span></div><h2 id="stem"></h2><p class="small" style="margin:0 0 12px">You have up to two hours to complete this attempt. Choose an option, then submit your answer. Your score is revealed after every 10 questions.</p><div class="options" id="options"></div><div class="feedback hidden" id="feedback"></div><div class="controls"><div class="right"><button class="quiet" id="skip">Skip</button><button class="quiet" id="dont-know">I DON’T KNOW</button><button class="primary" id="submit" disabled>Submit answer</button><button class="primary hidden" id="next">Next question</button></div></div></div><div class="quizcard checkpoint hidden" id="checkpoint"></div></section>
+<article class="card combined-card" id="card-combined"><div class="num">COMBINED · TEST MODE</div><h3>Omega Quiz</h3><p>Combines all four chapters into one randomized question bank: Sets and Operations, The Real Number System, Linear and Quadratic Functions, and Polynomial Functions. 224 questions in total.</p><button class="primary" onclick="start('combined')">Open · 224 questions</button><div class="progress-meta"><span id="progress-combined">0/224 · 0%</span><strong id="status-combined"></strong></div><div class="progress-track"><div class="progress-fill" id="fill-combined"></div></div></article>
+</div><section class="notice"><b>Progress:</b> Your quiz progress is saved automatically in this browser. It remains on this device and is not uploaded to an account.</section><div class="notice"><b>Question banks:</b> Chapter 1 has 50 questions. Chapters 2, 3 and 4 each have 58 original, textbook-aligned questions to improve subtopic coverage. Each chapter has its own saved browser progress. Omega Quiz combines all four chapter banks in one randomized quiz.</div></main>
+<section id="quiz" class="quiz hidden"><div class="quizhead"><div><div class="muted" id="chapter-label">Chapter 1 · Sets</div><div class="small" id="count">Question 1 of 50</div></div><div class="quizhead-actions"><span class="pill elapsed-timer" id="elapsed-timer" role="timer" aria-live="off">Time remaining 02:00:00</span><button class="quiet exit-quiz" id="exit-quiz" type="button">Quit quiz</button></div></div><div class="track"><div class="fill" id="fill"></div></div><div class="quizcard" id="qcard"><div class="meta"><span id="topic"></span><span id="difficulty"></span></div><h2 id="stem"></h2><p class="small" id="quiz-instructions" style="margin:0 0 12px">You have up to 90 minutes to complete this attempt. Choose an option, then submit your answer. Your score is revealed after every 10 questions.</p><div class="options" id="options"></div><div class="feedback hidden" id="feedback"></div><div class="controls"><div class="right"><button class="quiet" id="skip">Skip</button><button class="quiet" id="dont-know">I DON’T KNOW</button><button class="primary" id="submit" disabled>Submit answer</button><button class="quiet hidden" id="review-prev" type="button">Previous question</button><button class="quiet hidden" id="review-return" type="button">Back to results</button><button class="primary hidden" id="next">Next question</button></div></div></div><div class="quizcard checkpoint hidden" id="checkpoint"></div></section>
 <footer class="footer">MAT 101 Quiz Preparation · <a href="about.html">About</a> · <a href="privacy.html">Privacy Policy</a> · Please contact 0559411844 if you find any bugs or anything incorrect.</footer></div>
 <script src="chapter2-questions.js"></script>
 <script src="chapter3-questions.js"></script>
@@ -60,7 +60,7 @@ const chapterMeta={
   ch2:["Chapter 2 · The Real Number System","ch2"],
   ch3:["Chapter 3 · Linear and Quadratic Functions","ch3"],
   ch4:["Chapter 4 · Polynomial Functions","ch4"],
-  combined:["Combined Practice","combined"]
+  combined:["Omega Quiz","combined"]
 };
 const chapterTotals={ch1:chapter1Qs.length,ch2:chapterBanks.ch2.length,ch3:chapterBanks.ch3.length,ch4:chapterBanks.ch4.length,combined:chapter1Qs.length+chapterBanks.ch2.length+chapterBanks.ch3.length+chapterBanks.ch4.length};
 const combinedBanks={ch1:chapter1Qs,ch2:chapterBanks.ch2,ch3:chapterBanks.ch3,ch4:chapterBanks.ch4};
@@ -69,21 +69,21 @@ Object.entries(combinedBanks).forEach(([key,bank])=>bank.forEach((q,n)=>combined
 let activeOrder=null;
 
 let i=0,answers=[],shown=false,checkpointPending=false,reviewMode=false,selectedChoice=null;
-const QUIZ_LIMIT_MS=2*60*60*1000;let quizDeadline=0,deadlineInterval=null,quizEnded=false;
+const DEFAULT_QUIZ_LIMIT_MS=2*60*60*1000;function quizLimitFor(chapter){return chapter==="ch1"?90*60*1000:DEFAULT_QUIZ_LIMIT_MS}function quizLimitLabel(chapter){return chapter==="ch1"?"90 minutes":"two hours"}let quizDeadline=0,quizStartedAt=0,deadlineInterval=null,quizEnded=false;
 
 function readState(chapter){
   try{return JSON.parse(localStorage.getItem('math101-'+chapter)||'null')}catch(error){return null}
 }
-function answeredCount(state,total){return Math.min(total,Array.isArray(state?.answers)?state.answers.filter(Boolean).length:0)}
+function answeredCount(state,total){return Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a&&!a.timeout).length:0)}
 function progressInfo(chapter){
-  const total=chapterTotals[chapter],state=readState(chapter),answered=answeredCount(state,total),percent=Math.round(answered/total*100);
-  return {total,answered,percent,completed:answered===total};
+  const total=chapterTotals[chapter],state=readState(chapter),answered=answeredCount(state,total),correct=Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a?.correct).length:0),percent=Math.round(correct/total*100);
+  return {total,answered,correct,percent,completed:answered===total};
 }
 function renderDashboard(){
   Object.keys(chapterTotals).forEach(chapter=>{
     const p=progressInfo(chapter),card=$('card-'+chapter),label=$('progress-'+chapter),fill=$('fill-'+chapter),status=$('status-'+chapter);
     if(!card)return;
-    label.textContent=p.answered+'/'+p.total+' · '+p.percent+'%';
+    label.textContent=p.percent+'% grade · '+p.answered+'/'+p.total+' attempted';
     fill.style.width=p.percent+'%';
     card.classList.toggle('completed',p.completed);
     status.textContent=p.completed?'Completed':'';
@@ -99,7 +99,7 @@ function validCombinedOrder(order){
 }
 function bankFromOrder(order){return order.map(id=>combinedById.get(id))}
 function save(){
-  const state={quiz:chapterMeta[activeChapter][1],flowVersion:9,i,answers,checkpointPending,deadlineAt:quizDeadline};
+  const state={quiz:chapterMeta[activeChapter][1],flowVersion:10,i,answers,checkpointPending,deadlineAt:quizDeadline,startedAt:quizStartedAt};
   if(activeChapter==="combined")state.order=activeOrder;
   try{localStorage.setItem('math101-'+activeChapter,JSON.stringify(state));$('badge').textContent='Progress saved in this browser'}catch(error){$('badge').textContent='Browser storage unavailable'}
   renderDashboard();
@@ -122,13 +122,13 @@ function start(chapter="ch1"){
     qs=chapter==="ch1"?chapter1Qs:chapterBanks[chapter];
   }
   if(!Array.isArray(qs)||!qs.length){alert("This question bank could not be loaded.");return}
-  const versionValid=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
+  const versionValid=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9||s.flowVersion===10)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
   if(s&&s.quiz===chapterMeta[activeChapter][1]&&!versionValid){
     if(!confirm('This quiz has been updated. Start a fresh attempt?'))return;
     localStorage.removeItem(key);s=null;
     if(chapter==="combined"){activeOrder=freshCombinedOrder();qs=bankFromOrder(activeOrder)}
   }
-  const canResume=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
+  const canResume=s&&s.quiz===chapterMeta[activeChapter][1]&&(s.flowVersion===7||s.flowVersion===8||s.flowVersion===9||s.flowVersion===10)&&s.i<=qs.length&&(chapter!=="combined"||validCombinedOrder(s.order));
   let resumed=false;
   if(canResume&&confirm('Resume your '+chapterMeta[activeChapter][0]+' quiz? Cancel starts again.')){
     resumed=true;i=s.i;answers=s.answers||[];checkpointPending=!!s.checkpointPending;
@@ -137,10 +137,18 @@ function start(chapter="ch1"){
     if(chapter==="combined"){activeOrder=freshCombinedOrder();qs=bankFromOrder(activeOrder)}
     i=0;answers=[];checkpointPending=false;
   }
-  quizEnded=false;quizDeadline=resumed&&Number(s.deadlineAt)>0?Number(s.deadlineAt):Date.now()+QUIZ_LIMIT_MS;
+  quizEnded=false;
+  if(resumed){
+    quizDeadline=Number(s.deadlineAt)>0?Number(s.deadlineAt):Date.now()+quizLimitFor(chapter);
+    if(chapter==="ch1"&&s.flowVersion<10&&Number(s.deadlineAt)>0)quizDeadline-=30*60*1000;
+    quizStartedAt=Number(s.startedAt)||quizDeadline-quizLimitFor(chapter);
+  }else{
+    quizStartedAt=Date.now();quizDeadline=quizStartedAt+quizLimitFor(chapter);
+  }
   updateElapsedTimer();
   reviewMode=false;selectedChoice=null;
   $('chapter-label').textContent=chapterMeta[activeChapter][0];
+  $('quiz-instructions').textContent='You have up to '+quizLimitLabel(activeChapter)+' to complete this attempt. Choose an option, then submit your answer. Your score is revealed after every 10 questions.';
   $('home').classList.add('hidden');$('quiz').classList.remove('hidden');
   if(checkpointPending){$('qcard').classList.add('hidden');showCheckpoint(Math.ceil(i/10))}
   else{$('checkpoint').classList.add('hidden');$('qcard').classList.remove('hidden');draw()}
@@ -153,7 +161,8 @@ function draw(){
   let q=qs[i];shown=false;selectedChoice=null;
   $('count').textContent='Question '+(i+1)+' of '+qs.length;$('fill').style.width=(i/qs.length*100)+'%';
   $('topic').textContent=q[0];$('difficulty').textContent=q[1];$('stem').textContent=q[2];
-  $('options').innerHTML='';$('feedback').className='feedback hidden';$('next').classList.add('hidden');$('next').textContent=reviewMode?'Next review question':'Next question';
+  $('options').innerHTML='';$('feedback').className='feedback hidden';$('next').classList.add('hidden');$('next').textContent=reviewMode?(i===qs.length-1?'Finish review':'Next review question'):'Next question';
+  $('review-prev').classList.toggle('hidden',!reviewMode);$('review-return').classList.toggle('hidden',!reviewMode);$('review-prev').disabled=i===0;
   $('submit').classList.toggle('hidden',reviewMode);$('skip').classList.toggle('hidden',reviewMode);$('dont-know').classList.toggle('hidden',reviewMode);$('submit').disabled=true;
   q[3].forEach((v,n)=>{let b=document.createElement('button');b.className='option';let label=document.createElement('b');label.textContent='ABCD'[n]+'.';let span=document.createElement('span');span.textContent=v;b.append(label,span);b.onclick=()=>selectAnswer(n);$('options').append(b)});
   if(answers[i])restore();
@@ -205,7 +214,9 @@ function revealAnswer(answer){
 $('submit').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode||selectedChoice===null)return;let q=qs[i];revealAnswer({choice:selectedChoice,correct:selectedChoice===q[4]})};
 $('dont-know').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode)return;revealAnswer({choice:null,correct:false,unknown:true})};
 $('skip').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode)return;answers[i]={choice:null,correct:false,skipped:true};shown=true;advanceQuestion()};
-$('next').onclick=()=>{enforceTimeLimit();if(quizEnded)return;if(reviewMode){i++;if(i>=qs.length){result(false);return}draw();stop();return}advanceQuestion()};
+$('next').onclick=()=>{enforceTimeLimit();if(quizEnded)return;if(reviewMode){if(i>=qs.length-1){result(false);return}i++;draw();stop();return}advanceQuestion()};
+$('review-prev').onclick=()=>{if(!reviewMode)return;i=Math.max(0,i-1);draw();stop()};
+$('review-return').onclick=()=>{if(reviewMode)result(false)};
 function escapeHTML(value){return String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]))}
 function openMistakeReview(start,end,returnTo){stop();const items=[];for(let n=start;n<end;n++){const q=qs[n],a=answers[n];if(a?.correct)continue;const status=a?.unknown?'I DON’T KNOW — counted as incorrect':a?.skipped?'Skipped — counted as incorrect':a?.choice===undefined?'Unanswered':'Incorrect answer';const chosen=a?.unknown?'I DON’T KNOW':a?.choice===null||a?.choice===undefined?'No option submitted':('ABCD'[a.choice]+'. '+q[3][a.choice]);items.push('<article class="mistake-card"><div class="meta"><span>Question '+(n+1)+' · '+escapeHTML(q[0])+'</span><strong>'+status+'</strong></div><h3>'+escapeHTML(q[2])+'</h3><div class="mistake-answer"><p><b>Your response:</b> '+escapeHTML(chosen)+'</p><p><b>Correct answer:</b> '+'ABCD'[q[4]]+'. '+escapeHTML(q[3][q[4]])+'</p></div><section class="solution"><strong>Exam / Theory Solution</strong><p>'+escapeHTML(q[5])+'</p></section>'+(q[7]?'<section class="solution"><strong>Venn Diagram</strong>'+vennSvg(q[7])+'</section>':'')+'<section class="solution"><strong>Quick Solution</strong><p>'+escapeHTML(q[6])+'</p></section></article>')}
 $('qcard').classList.add('hidden');$('checkpoint').classList.remove('hidden');$('checkpoint').innerHTML='<div class="eyebrow">Answer review</div><h2>Questions to work on</h2><p class="muted">'+items.length+' question'+(items.length===1?'':'s')+' need review. Each includes the correct answer, exam/theory solution and quick solution.</p>'+(items.length?'<div class="mistake-list">'+items.join('')+'</div>':'<div class="stats"><p>No incorrect, skipped or unanswered questions in this section. All answers were correct.</p></div>')+'<button class="primary" id="return-results">Back to results</button>';$('return-results').onclick=returnTo;window.scrollTo(0,0)}
@@ -216,7 +227,46 @@ function blockMessage(score){return score===10?'Perfect run. Elite level.':score
 function scoreBlock(start,end){return answers.slice(start,end).filter(a=>a?.correct).length}
 function launchConfetti(){if(window.matchMedia?.('(prefers-reduced-motion: reduce)').matches)return;const layer=document.createElement('div');layer.className='confetti-layer';layer.setAttribute('aria-hidden','true');document.body.appendChild(layer);const colours=['#f43f5e','#f59e0b','#22c55e','#3b82f6','#a855f7','#ec4899','#14b8a6'];for(let n=0;n<90;n++){const piece=document.createElement('span');piece.className='confetti-piece'+(n%5===0?' circle':'');piece.style.left=(Math.random()*100)+'vw';piece.style.setProperty('--drift',((Math.random()-.5)*260)+'px');piece.style.setProperty('--spin',((Math.random()*720)-360)+'deg');piece.style.setProperty('--duration',(2.2+Math.random()*2.2)+'s');piece.style.setProperty('--delay',(Math.random()*.25)+'s');piece.style.background=colours[n%colours.length];layer.appendChild(piece)}setTimeout(()=>layer.remove(),5000)}
 function showCheckpoint(block){stop();checkpointPending=true;$('qcard').classList.add('hidden');$('checkpoint').classList.remove('hidden');const start=(block-1)*10,end=Math.min(block*10,qs.length),total=end-start,score=scoreBlock(start,end),mistakes=answers.slice(start,end).filter(a=>!a?.correct).length,performance=Math.round(score/total*10);$('checkpoint').innerHTML='<div class="eyebrow">Checkpoint '+block+' of '+Math.ceil(qs.length/10)+' · Questions '+(start+1)+'–'+end+'</div><div class="score">'+score+'/'+total+'</div><h2>'+blockLevel(performance)+'</h2><p class="muted">'+blockMessage(performance)+'</p>'+(total===10&&score>=9?'<p class="celebration-note">Outstanding work! You nailed this round!</p>':'')+'<p class="small">Review your answers or continue when ready.</p><div class="controls"><button class="secondary" id="review-block">Review this checkpoint ('+mistakes+' incorrect / skipped)</button><button class="primary" id="continue-block">'+(end===qs.length?'View final grade & statistics':'Continue to questions '+(end+1)+'–'+Math.min(end+10,qs.length))+'</button></div>';if(total===10&&score>=9)launchConfetti();$('review-block').onclick=()=>openMistakeReview(start,end,()=>showCheckpoint(block));$('continue-block').onclick=()=>{enforceTimeLimit();if(quizEnded)return;checkpointPending=false;save();if(i>=qs.length){result(false);return}$('checkpoint').classList.add('hidden');$('qcard').classList.remove('hidden');draw();run()};save()}
-function result(timeExpired=false){timeExpired=timeExpired||!!(quizDeadline&&Date.now()>=quizDeadline);if(timeExpired){for(let n=0;n<qs.length;n++){if(!answers[n])answers[n]={choice:null,correct:false,timeout:true}}}stop();if(deadlineInterval!==null){clearInterval(deadlineInterval);deadlineInterval=null}quizEnded=true;checkpointPending=false;$('qcard').classList.add('hidden');$('checkpoint').classList.remove('hidden');const correct=answers.filter(a=>a?.correct).length,wrong=answers.filter(a=>a&&!a.correct).length,skipped=answers.filter(a=>a?.skipped).length,unknown=answers.filter(a=>a?.unknown).length,unanswered=qs.length-answers.filter(Boolean).length,percent=Math.round(correct/qs.length*100),grade=blockLevel(Math.floor(percent/10)),reviewCount=qs.filter((q,n)=>!answers[n]?.correct).length;$('checkpoint').innerHTML='<div class="eyebrow">'+(timeExpired?'2-hour limit reached · Final report':'Quiz complete · Final report')+'</div><div class="score">'+correct+'/'+qs.length+'</div><h2>'+grade+'</h2><p class="muted">'+percent+'% overall · '+blockMessage(Math.floor(percent/10))+'</p><div class="stats"><h3>Overall statistics</h3><div class="stat-row"><span>Correct answers</span><strong>'+correct+'</strong></div><div class="stat-row"><span>Incorrect answers (including skips)</span><strong>'+wrong+'</strong></div><div class="stat-row"><span>Skipped questions</span><strong>'+skipped+'</strong></div><div class="stat-row"><span>I DON’T KNOW responses</span><strong>'+unknown+'</strong></div><div class="stat-row"><span>Unanswered</span><strong>'+unanswered+'</strong></div><h3>Performance by problem type</h3>'+topicStatsHTML(0,qs.length)+'</div><p class="small">Each percentage is shown with its question count. Treat results from categories with only one or two questions as an early indication, not a firm measure. Open the mistake review to see worked solutions for every incorrect, skipped or unanswered question.</p><div class="controls"><button class="secondary" id="review-wrong" '+(reviewCount?'':'disabled')+'>See answers to questions I got wrong ('+reviewCount+')</button><button class="quiet" id="review-all">Review all questions</button><button class="primary" id="back">Back to chapters</button></div>';$('review-wrong').onclick=()=>openMistakeReview(0,qs.length,()=>result());$('review-all').onclick=()=>{i=0;reviewMode=true;checkpointPending=false;draw();$('checkpoint').classList.add('hidden');$('qcard').classList.remove('hidden');stop()};$('back').onclick=()=>{$('quiz').classList.add('hidden');$('home').classList.remove('hidden');localStorage.removeItem('math101-preview');i=0;answers=[];checkpointPending=false;reviewMode=false;activeOrder=null;renderDashboard()};save()}
+
+function pdfSafe(value){return String(value??'').replace(/[–—−]/g,'-').replace(/×/g,'x').replace(/≤/g,'<=').replace(/≥/g,'>=').replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/…/g,'...').replace(/∅/g,'empty set').replace(/[^\x20-\x7E]/g,'?')}
+function pdfEscape(value){return pdfSafe(value).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)')}
+function buildSimplePDF(lines){
+  const wrapped=[];for(const raw of lines){let line=pdfSafe(raw);if(!line){wrapped.push('');continue}while(line.length>88){let cut=line.lastIndexOf(' ',88);if(cut<30)cut=88;wrapped.push(line.slice(0,cut));line=line.slice(cut).trim()}wrapped.push(line)}
+  const pages=[];for(let n=0;n<wrapped.length;n+=50)pages.push(wrapped.slice(n,n+50));
+  const objects=[];objects[1]='<< /Type /Catalog /Pages 2 0 R >>';objects[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>';const kids=[];
+  pages.forEach((page,n)=>{const pageId=4+n*2,contentId=pageId+1;kids.push(pageId+' 0 R');let stream='BT\n/F1 10 Tf\n50 760 Td\n13 TL\n';page.forEach(line=>{stream+='('+pdfEscape(line)+') Tj\nT*\n'});stream+='ET';objects[pageId]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents '+contentId+' 0 R >>';objects[contentId]='<< /Length '+stream.length+' >>\nstream\n'+stream+'\nendstream'});
+  objects[2]='<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+pages.length+' >>';
+  let pdf='%PDF-1.4\n',offsets=[0];for(let n=1;n<objects.length;n++){offsets[n]=pdf.length;pdf+=n+' 0 obj\n'+objects[n]+'\nendobj\n'}const xref=pdf.length;pdf+='xref\n0 '+objects.length+'\n0000000000 65535 f \n';for(let n=1;n<objects.length;n++)pdf+=String(offsets[n]).padStart(10,'0')+' 00000 n \n';pdf+='trailer\n<< /Size '+objects.length+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';return new Blob([pdf],{type:'application/pdf'})
+}
+function downloadResultsPDF(){
+  const correct=answers.filter(a=>a?.correct).length,attempted=answers.filter(a=>a&&!a.timeout).length,wrong=answers.filter(a=>a&&!a.correct&&!a.timeout&&!a.skipped&&!a.unknown).length,skipped=answers.filter(a=>a?.skipped).length,unknown=answers.filter(a=>a?.unknown).length,unanswered=qs.length-attempted,percent=Math.round(correct/qs.length*100),grade=blockLevel(Math.floor(percent/10));
+  const lines=['MAT 101 QUIZ RESULTS','====================','Quiz: '+chapterMeta[activeChapter][0],'Generated: '+new Date().toLocaleString(),'','FINAL GRADE: '+percent+'% - '+grade,'Score: '+correct+' / '+qs.length,'Completion: '+(attempted===qs.length?'Completed':'Not completed'),'Attempted: '+attempted+' / '+qs.length,'Correct: '+correct,'Incorrect submitted answers: '+wrong,'Skipped: '+skipped,"I DON'T KNOW responses: "+unknown,'Unanswered / timed out: '+unanswered,'Time allowed: '+quizLimitLabel(activeChapter),'Elapsed time: '+Math.max(0,Math.min(quizLimitFor(activeChapter),Date.now()-quizStartedAt))/60000+' minutes','','PERFORMANCE BY TOPIC','--------------------'];
+  const groups={};for(let n=0;n<qs.length;n++){const key=problemType(qs[n][0].split(' · p.')[0]);if(!groups[key])groups[key]={total:0,correct:0};groups[key].total++;if(answers[n]?.correct)groups[key].correct++}
+  Object.entries(groups).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,v])=>lines.push(name+': '+v.correct+'/'+v.total+' correct ('+Math.round(v.correct/v.total*100)+'%)'));
+  const nums=test=>answers.map((a,n)=>test(a)?n+1:null).filter(Boolean);
+  lines.push('','QUESTION NUMBERS','-----------------','Incorrect submitted answers: '+(nums(a=>a&&!a.correct&&!a.timeout&&!a.skipped&&!a.unknown).join(', ')||'None'),'Skipped: '+(nums(a=>a?.skipped).join(', ')||'None'),"I DON'T KNOW: "+(nums(a=>a?.unknown).join(', ')||'None'),'Unanswered / timed out: '+(nums(a=>!a||a.timeout).join(', ')||'None'),'','QUESTIONS TO REVIEW','-------------------');
+  for(let n=0;n<qs.length;n++){const a=answers[n];if(a?.correct)continue;const status=!a||a.timeout?'Unanswered / timed out':a.skipped?'Skipped':a.unknown?"I DON'T KNOW":'Incorrect';lines.push('Question '+(n+1)+' - '+status+' - '+qs[n][0])}
+  lines.push('','Grade = correct answers / total questions. Completion = every question attempted.');
+  const blob=buildSimplePDF(lines),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Math-101-'+activeChapter+'-quiz-results.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)
+}
+function result(timeExpired=false){
+  timeExpired=timeExpired||!!(quizDeadline&&Date.now()>=quizDeadline);
+  if(timeExpired){for(let n=0;n<qs.length;n++){if(!answers[n])answers[n]={choice:null,correct:false,timeout:true}}}
+  stop();if(deadlineInterval!==null){clearInterval(deadlineInterval);deadlineInterval=null}
+  quizEnded=true;checkpointPending=false;$('qcard').classList.add('hidden');$('checkpoint').classList.remove('hidden');
+  const correct=answers.filter(a=>a?.correct).length,attempted=answers.filter(a=>a&&!a.timeout).length;
+  const wrong=answers.filter(a=>a&&!a.correct&&!a.timeout&&!a.skipped&&!a.unknown).length;
+  const skipped=answers.filter(a=>a?.skipped).length,unknown=answers.filter(a=>a?.unknown).length;
+  const unanswered=qs.length-attempted,percent=Math.round(correct/qs.length*100),grade=blockLevel(Math.floor(percent/10));
+  const reviewCount=qs.filter((q,n)=>!answers[n]?.correct).length,completion=attempted===qs.length?'Completed':'Not completed';
+  $('checkpoint').innerHTML='<div class="eyebrow">'+(timeExpired?'Time limit reached · Final report':'Quiz complete · Final report')+'</div><div class="score">'+percent+'%</div><h2>'+grade+'</h2><p class="muted">'+correct+'/'+qs.length+' correct · '+blockMessage(Math.floor(percent/10))+'</p><div class="stats"><h3>Overall statistics</h3><div class="stat-row"><span>Grade</span><strong>'+percent+'%</strong></div><div class="stat-row"><span>Correct answers</span><strong>'+correct+'/'+qs.length+'</strong></div><div class="stat-row"><span>Incorrect submitted answers</span><strong>'+wrong+'</strong></div><div class="stat-row"><span>Skipped questions</span><strong>'+skipped+'</strong></div><div class="stat-row"><span>I DON’T KNOW responses</span><strong>'+unknown+'</strong></div><div class="stat-row"><span>Unanswered / timed out</span><strong>'+unanswered+'</strong></div><div class="stat-row"><span>Questions attempted</span><strong>'+attempted+'/'+qs.length+'</strong></div><div class="stat-row"><span>Quiz completion</span><strong>'+completion+'</strong></div><h3>Performance by problem type</h3>'+topicStatsHTML(0,qs.length)+'</div><p class="small">The grade is based only on correct answers out of all questions. “Completed” means every question was attempted; it does not mean every answer was correct. The review shows worked solutions for incorrect, skipped and unanswered questions.</p><div class="controls"><button class="secondary" id="download-pdf">Download results (PDF)</button><button class="secondary" id="review-wrong" '+(reviewCount?'':'disabled')+'>Review questions to work on ('+reviewCount+')</button><button class="quiet" id="review-all">Review all questions</button><button class="quiet" id="retake">Retake quiz</button><button class="primary" id="back">Back to chapters</button></div>';
+  $('download-pdf').onclick=downloadResultsPDF;
+  $('review-wrong').onclick=()=>openMistakeReview(0,qs.length,()=>result());
+  $('review-all').onclick=()=>{i=0;reviewMode=true;checkpointPending=false;draw();$('checkpoint').classList.add('hidden');$('qcard').classList.remove('hidden');stop()};
+  $('retake').onclick=()=>{if(!confirm('Start a fresh attempt? The previous attempt will be replaced on this device.'))return;localStorage.removeItem('math101-'+activeChapter);if(deadlineInterval!==null){clearInterval(deadlineInterval);deadlineInterval=null}start(activeChapter)};
+  $('back').onclick=()=>{$('quiz').classList.add('hidden');$('home').classList.remove('hidden');i=0;answers=[];checkpointPending=false;reviewMode=false;activeOrder=null;renderDashboard()};
+  save()
+}
 renderDashboard();
 $('badge').textContent='Saved on this device';
 </script><script>(()=>{const key='mat101-theme';const btn=document.getElementById('theme-toggle');if(!btn)return;function apply(theme){document.documentElement.dataset.theme=theme;btn.textContent=theme==='dark'?'☀ Light mode':'☾ Dark mode';btn.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');btn.setAttribute('aria-pressed',String(theme==='dark'));try{localStorage.setItem(key,theme)}catch(e){}}apply(document.documentElement.dataset.theme||'light');btn.addEventListener('click',()=>apply(document.documentElement.dataset.theme==='dark'?'light':'dark'))})();</script></body></html>
