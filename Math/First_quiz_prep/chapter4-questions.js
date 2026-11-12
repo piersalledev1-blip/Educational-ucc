@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 4 — 50 original questions. Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
+/* MAT 101 Chapter 4 — expanded textbook-coverage bank (58 questions for Chapters 2 and 4; 58 for Chapter 3). Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
 window.mat101Chapter4 = [
   [
     "Polynomial degree · p.47–49",
@@ -756,5 +756,79 @@ window.mat101Chapter4 = [
     0,
     "2(x−1)(x−2)(x−3)=2(x³−6x²+11x−6)=2x³−12x²+22x−12.",
     "Form a(x−r)(x−s)(x−t) and expand."
+  ]
+,
+
+  [
+    "Polynomial division · p.50",
+    "Average",
+    "Divide x³+2x²−5x−6 by x+3. What are the quotient and remainder?",
+    ["x²−x−2, remainder 0", "x²+x−2, remainder 0", "x²−x+2, remainder 3", "x²+2x−5, remainder −6"],
+    0,
+    "Synthetic or long division by x+3 gives quotient x²−x−2 and remainder 0. Indeed, (x+3)(x²−x−2)=x³+2x²−5x−6.",
+    "Divide by x+3 and verify by multiplying divisor and quotient."
+  ],
+  [
+    "Polynomial division · p.50",
+    "Challenging",
+    "When x³+2x²+3x+4 is divided by x²+1, what is the quotient and remainder?",
+    ["x+2, remainder 2x+2", "x+2, remainder x+2", "x−2, remainder 2x+6", "x, remainder 3x+4"],
+    0,
+    "The leading term gives quotient term x. Subtract x(x²+1)=x³+x to leave 2x²+2x+4. The next quotient term is 2; subtract 2(x²+1)=2x²+2 to leave 2x+2. Thus Q(x)=x+2 and R(x)=2x+2.",
+    "Use polynomial long division, ensuring the remainder has degree less than the quadratic divisor."
+  ],
+  [
+    "Extended Factor Theorem · p.51–53",
+    "Challenging",
+    "A polynomial P has distinct zeros −2, 1 and 4. Which expression must divide P(x)?",
+    ["(x−2)(x+1)(x−4)", "(x+2)(x−1)(x−4)", "(x+2)(x+1)(x−4)", "(x−2)(x−1)(x+4)"],
+    1,
+    "Each zero a gives a factor x−a. The three distinct zeros therefore give factors (x+2), (x−1) and (x−4), whose product divides P(x).",
+    "Convert each zero a into its factor x−a, then multiply the factors."
+  ],
+  [
+    "Factorisation of powers · p.56–57",
+    "Challenging",
+    "Which factorisation of x⁵+32 is correct?",
+    ["(x+2)(x⁴−2x³+4x²−8x+16)", "(x−2)(x⁴+2x³+4x²+8x+16)", "(x+2)(x⁴+2x³+4x²+8x+16)", "(x−2)(x⁴−2x³+4x²−8x+16)"],
+    0,
+    "Since 32=2⁵ and 5 is odd, x⁵+2⁵=(x+2)(x⁴−2x³+4x²−8x+16).",
+    "For odd n, xⁿ+aⁿ has factor x+a and an alternating-sign quotient."
+  ],
+  [
+    "Vieta · p.61–64",
+    "Challenging",
+    "A monic quadratic has roots α and β with α+β=4 and αβ=−3. What is the equation whose roots are α+1 and β+1?",
+    ["x²−6x+2=0", "x²−2x−8=0", "x²−6x−8=0", "x²+6x−2=0"],
+    0,
+    "The new root sum is (α+1)+(β+1)=4+2=6. The new product is (α+1)(β+1)=αβ+α+β+1=−3+4+1=2. Hence x²−6x+2=0.",
+    "Find the sum and product of the shifted roots, then use x²−Sx+P=0."
+  ],
+  [
+    "Vieta · p.61–64",
+    "Challenging",
+    "A monic quartic has roots r, s, t and u. Which expression is the coefficient of x²?",
+    ["−(r+s+t+u)", "rs+rt+ru+st+su+tu", "−(rst+rsu+rtu+stu)", "rstu"],
+    1,
+    "For a monic quartic, the coefficient of x² is the sum of all pairwise products of distinct roots: rs+rt+ru+st+su+tu.",
+    "The x² coefficient is the second elementary symmetric sum of the four roots."
+  ],
+  [
+    "Multiplicity · p.52–53",
+    "Challenging",
+    "A real zero has multiplicity 3. What does the polynomial graph do at that zero?",
+    ["It touches the x-axis and turns back without crossing", "It crosses the x-axis", "It cannot meet the x-axis there", "It must have a local maximum there"],
+    1,
+    "An odd multiplicity gives an odd power of the corresponding linear factor, so the polynomial changes sign across the zero and its graph crosses the x-axis.",
+    "Odd multiplicity means the sign changes, so the curve crosses."
+  ],
+  [
+    "Factorisation of powers · p.56–57",
+    "Average",
+    "For a positive integer n, when is xⁿ+aⁿ guaranteed to have x+a as a factor?",
+    ["When n is even", "When n is odd", "For every n", "Only when a=0"],
+    1,
+    "Substituting x=−a gives (−a)ⁿ+aⁿ=0 exactly when n is odd (for general non-zero a). By the Factor Theorem, x+a is then a factor.",
+    "Apply the Factor Theorem at x=−a; odd powers cancel."
   ]
 ];
