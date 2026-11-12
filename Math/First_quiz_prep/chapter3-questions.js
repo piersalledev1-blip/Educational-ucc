@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 3 — expanded textbook-coverage bank (58 questions for Chapters 2 and 4; 58 for Chapter 3). Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
+/* MAT 101 Chapter 3 — 58 original questions. Textbook-grounded and independently checked; no textbook exercise stems copied. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
 window.mat101Chapter3 = [
   [
     "Linear functions · p.35–37",
