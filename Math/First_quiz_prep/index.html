@@ -273,24 +273,67 @@ function showCheckpoint(block){stop();checkpointPending=true;$('qcard').classLis
 
 function pdfSafe(value){return String(value??'').replace(/[–—−]/g,'-').replace(/×/g,'x').replace(/≤/g,'<=').replace(/≥/g,'>=').replace(/[’‘]/g,"'").replace(/[“”]/g,'"').replace(/…/g,'...').replace(/∅/g,'empty set').replace(/[^\x20-\x7E]/g,'?')}
 function pdfEscape(value){return pdfSafe(value).replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)')}
-function buildSimplePDF(lines){
-  const wrapped=[];for(const raw of lines){let line=pdfSafe(raw);if(!line){wrapped.push('');continue}while(line.length>88){let cut=line.lastIndexOf(' ',88);if(cut<30)cut=88;wrapped.push(line.slice(0,cut));line=line.slice(cut).trim()}wrapped.push(line)}
-  const pages=[];for(let n=0;n<wrapped.length;n+=50)pages.push(wrapped.slice(n,n+50));
-  const objects=[];objects[1]='<< /Type /Catalog /Pages 2 0 R >>';objects[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>';const kids=[];
-  pages.forEach((page,n)=>{const pageId=4+n*2,contentId=pageId+1;kids.push(pageId+' 0 R');let stream='BT\n/F1 10 Tf\n50 760 Td\n13 TL\n';page.forEach(line=>{stream+='('+pdfEscape(line)+') Tj\nT*\n'});stream+='ET';objects[pageId]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents '+contentId+' 0 R >>';objects[contentId]='<< /Length '+stream.length+' >>\nstream\n'+stream+'\nendstream'});
-  objects[2]='<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+pages.length+' >>';
-  let pdf='%PDF-1.4\n',offsets=[0];for(let n=1;n<objects.length;n++){offsets[n]=pdf.length;pdf+=n+' 0 obj\n'+objects[n]+'\nendobj\n'}const xref=pdf.length;pdf+='xref\n0 '+objects.length+'\n0000000000 65535 f \n';for(let n=1;n<objects.length;n++)pdf+=String(offsets[n]).padStart(10,'0')+' 00000 n \n';pdf+='trailer\n<< /Size '+objects.length+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';return new Blob([pdf],{type:'application/pdf'})
+function buildCertificatePDF(data){
+  const W=842,H=595,commands=[];
+  const rgb=hex=>{const h=hex.replace('#','');return [0,2,4].map(i=>parseInt(h.slice(i,i+2),16)/255).map(n=>n.toFixed(3)).join(' ')};
+  const fill=hex=>commands.push(rgb(hex)+' rg');
+  const stroke=hex=>commands.push(rgb(hex)+' RG');
+  const rect=(x,y,w,h,hex)=>{fill(hex);commands.push(x+' '+y+' '+w+' '+h+' re f')};
+  const line=(x1,y1,x2,y2,hex,width=1)=>{stroke(hex);commands.push(width+' w '+x1+' '+y1+' m '+x2+' '+y2+' l S')};
+  const txt=(value,x,y,size,hex,bold=false,center=false)=>{
+    const s=pdfSafe(value),font=bold?'F2':'F1',approx=s.length*size*(bold?.56:.52),tx=center?x-approx/2:x;
+    fill(hex);commands.push('BT /'+font+' '+size+' Tf 1 0 0 1 '+tx.toFixed(2)+' '+y+' Tm ('+pdfEscape(s)+') Tj ET');
+  };
+  const tier=data.percent>=90?{name:'DISTINCTION',accent:'#B58A35',soft:'#F7F0DF',note:'Exceptional performance'}:
+    data.percent>=80?{name:'MERIT',accent:'#3157D5',soft:'#EAF0FF',note:'Strong performance'}:
+    data.percent>=70?{name:'COMMENDATION',accent:'#137B70',soft:'#E7F5F1',note:'Very good performance'}:
+    data.percent>=50?{name:'ACHIEVEMENT',accent:'#64748B',soft:'#EEF1F5',note:'Good progress demonstrated'}:
+    {name:'PARTICIPATION',accent:'#718096',soft:'#EEF1F5',note:'A starting point for further progress'};
+  rect(0,0,W,H,'#F5F6FA');rect(20,20,W-40,H-40,'#FFFFFF');
+  stroke(tier.accent);commands.push('3 w 30 30 '+(W-60)+' '+(H-60)+' re S');
+  stroke('#E3E7EF');commands.push('1 w 39 39 '+(W-78)+' '+(H-78)+' re S');
+  rect(40,H-112,W-80,2,tier.accent);
+  txt('MAT',60,H-77,17,'#172033',true,false);txt('101',96,H-77,17,tier.accent,true,false);txt('/ PREP',130,H-77,11,'#657087',true,false);
+  txt('UNIVERSITY MATHEMATICS  |  UCC',W-60,H-73,9,'#657087',true,true);
+  txt('CERTIFICATE OF PRACTICE',W/2,H-163,11,tier.accent,true,true);
+  txt('Performance Recognition',W/2,H-207,30,'#172033',true,true);
+  txt('This certificate recognises your result in',W/2,H-239,12,'#657087',false,true);
+  const topic=pdfSafe(data.topic),topicSize=topic.length>48?16:topic.length>34?18:21;
+  txt(topic,W/2,H-273,topicSize,'#172033',true,true);
+  line(310,H-293,532,H-293,'#E3E7EF',1);
+  txt('AWARDED LEVEL',W/2,H-324,8,'#657087',true,true);
+  txt(tier.name,W/2,H-350,15,tier.accent,true,true);
+  txt(tier.note,W/2,H-371,10,'#657087',false,true);
+  rect(335,112,172,112,tier.soft);stroke(tier.accent);commands.push('2 w 335 112 172 112 re S');
+  txt(data.percent+'%',W/2,169,43,tier.accent,true,true);
+  txt('FINAL SCORE',W/2,145,8,'#657087',true,true);
+  txt(data.correct+' correct out of '+data.total+' questions',W/2,91,10,'#172033',true,true);
+  line(92,76,750,76,'#E3E7EF',1);
+  txt('QUIZ  '+data.topic,92,57,8,'#657087',true,false);
+  txt('DATE  '+data.date,W-92,57,8,'#657087',true,true);
+  txt(data.completion,W/2,37,8,'#657087',false,true);
+  txt('Independent practice record - not an official university transcript',W/2,24,7,'#8A93A5',false,true);
+  const stream=commands.join('\n'),objects=[];
+  objects[1]='<< /Type /Catalog /Pages 2 0 R >>';
+  objects[2]='<< /Type /Pages /Kids [5 0 R] /Count 1 >>';
+  objects[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>';
+  objects[4]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>';
+  objects[5]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 842 595] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 6 0 R >>';
+  objects[6]='<< /Length '+stream.length+' >>\nstream\n'+stream+'\nendstream';
+  let pdf='%PDF-1.4\n';const offsets=[0];
+  for(let n=1;n<objects.length;n++){offsets[n]=pdf.length;pdf+=n+' 0 obj\n'+objects[n]+'\nendobj\n'}
+  const xref=pdf.length;pdf+='xref\n0 '+objects.length+'\n0000000000 65535 f \n';
+  for(let n=1;n<objects.length;n++)pdf+=String(offsets[n]).padStart(10,'0')+' 00000 n \n';
+  pdf+='trailer\n<< /Size '+objects.length+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';
+  return new Blob([pdf],{type:'application/pdf'});
 }
 function downloadResultsPDF(){
-  const correct=answers.filter(a=>a?.correct).length,attempted=answers.filter(a=>a&&!a.timeout).length,wrong=answers.filter(a=>a&&!a.correct&&!a.timeout&&!a.skipped&&!a.unknown).length,skipped=answers.filter(a=>a?.skipped).length,unknown=answers.filter(a=>a?.unknown).length,unanswered=qs.length-attempted,percent=Math.round(correct/qs.length*100),grade=blockLevel(Math.floor(percent/10));
-  const lines=['MAT 101 QUIZ RESULTS','====================','Quiz: '+chapterMeta[activeChapter][0],'Generated: '+new Date().toLocaleString(),'','FINAL GRADE: '+percent+'% - '+grade,'Score: '+correct+' / '+qs.length,'Completion: '+(attempted===qs.length?'Completed':'Not completed'),'Attempted: '+attempted+' / '+qs.length,'Correct: '+correct,'Incorrect submitted answers: '+wrong,'Skipped: '+skipped,"I DON'T KNOW responses: "+unknown,'Unanswered / timed out: '+unanswered,'Time allowed: '+quizLimitLabel(activeChapter),'Elapsed time: '+Math.max(0,Math.min(quizLimitFor(activeChapter),Date.now()-quizStartedAt))/60000+' minutes','','PERFORMANCE BY TOPIC','--------------------'];
-  const groups={};for(let n=0;n<qs.length;n++){const key=problemType(qs[n][0].split(' · p.')[0]);if(!groups[key])groups[key]={total:0,correct:0};groups[key].total++;if(answers[n]?.correct)groups[key].correct++}
-  Object.entries(groups).sort((a,b)=>a[0].localeCompare(b[0])).forEach(([name,v])=>lines.push(name+': '+v.correct+'/'+v.total+' correct ('+Math.round(v.correct/v.total*100)+'%)'));
-  const nums=test=>answers.map((a,n)=>test(a)?n+1:null).filter(Boolean);
-  lines.push('','QUESTION NUMBERS','-----------------','Incorrect submitted answers: '+(nums(a=>a&&!a.correct&&!a.timeout&&!a.skipped&&!a.unknown).join(', ')||'None'),'Skipped: '+(nums(a=>a?.skipped).join(', ')||'None'),"I DON'T KNOW: "+(nums(a=>a?.unknown).join(', ')||'None'),'Unanswered / timed out: '+(nums(a=>!a||a.timeout).join(', ')||'None'),'','QUESTIONS TO REVIEW','-------------------');
-  for(let n=0;n<qs.length;n++){const a=answers[n];if(a?.correct)continue;const status=!a||a.timeout?'Unanswered / timed out':a.skipped?'Skipped':a.unknown?"I DON'T KNOW":'Incorrect';lines.push('Question '+(n+1)+' - '+status+' - '+qs[n][0])}
-  lines.push('','Grade = correct answers / total questions. Completion = every question attempted.');
-  const blob=buildSimplePDF(lines),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='Math-101-'+activeChapter+'-quiz-results.pdf';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)
+  const correct=answers.filter(a=>a?.correct).length,percent=Math.round(correct/qs.length*100);
+  const attempted=answers.filter(a=>a&&!a.timeout).length;
+  const data={percent,correct,total:qs.length,topic:chapterMeta[activeChapter][0],date:new Date().toLocaleDateString(),completion:attempted===qs.length?'QUIZ COMPLETED':'ATTEMPT ENDED BEFORE COMPLETION'};
+  const blob=buildCertificatePDF(data),url=URL.createObjectURL(blob),a=document.createElement('a');
+  a.href=url;a.download='MAT101-'+activeChapter+'-practice-certificate.pdf';
+  document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)
 }
 function result(timeExpired=false){
   timeExpired=timeExpired||!!(quizDeadline&&Date.now()>=quizDeadline);
