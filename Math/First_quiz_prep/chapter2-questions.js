@@ -156,7 +156,7 @@ window.mat101Chapter2 = [
   ],
   [
     "Zero-product theorem · p.22–23",
-    "Challenging",
+    "Average",
     "A rectangular area is (x−5)(x+2)=0. Which values make the area expression zero?",
     [
       "5 only",
