@@ -481,14 +481,14 @@ window.mat101Chapter3 = [
     "Challenging",
     "A quadratic has roots α and β. A new monic quadratic has roots α+1 and β+1. If α+β=−2 and αβ=−3, find the new equation.",
     [
-      "x²+4x+0=0",
-      "x²+0x−3=0",
-      "x²+4x+0?",
-      "x²+2x−3=0"
+      "x²−4=0",
+      "x²+4=0",
+      "x²−2x−4=0",
+      "x²+2x−4=0"
     ],
     0,
-    "New sum=(α+β)+2=0. New product=(α+1)(β+1)=αβ+α+β+1=−3−2+1=−4. Thus x²−0x−4=0.",
-    "Shift both roots by one, then compute their new sum and product."
+    "The new sum is (α+β)+2=0. The new product is αβ+α+β+1=−3−2+1=−4. Hence the equation is x²−4=0.",
+    "Find the shifted roots' sum and product, then form x²−Sx+P."
   ],
   [
     "Quadratic from roots · p.43–45",
@@ -523,14 +523,14 @@ window.mat101Chapter3 = [
     "Challenging",
     "For what values of k is x²+2kx+k+5 positive for all real x?",
     [
-      "k<−2 or k>3",
-      "−2<k<3",
-      "k≤−2 or k≥3",
-      "k=−2 or 3"
+      "k<(1−√21)/2 or k>(1+√21)/2",
+      "(1−√21)/2<k<(1+√21)/2",
+      "k≤(1−√21)/2 or k≥(1+√21)/2",
+      "k=0 only"
     ],
     1,
-    "For an upward quadratic to be strictly positive, Δ<0: 4k²−4(k+5)<0, so k²−k−5<0. Roots are (1±√21)/2, so the correct interval is between them.",
-    "Set the discriminant below zero and solve the resulting quadratic in k."
+    "For strict positivity with a=1>0, require Δ<0: 4k²−4(k+5)<0, so k²−k−5<0. Its roots are (1±√21)/2, so k lies strictly between them.",
+    "Set the discriminant below zero and solve the resulting quadratic inequality in k."
   ],
   [
     "Quadratic functions · p.38–41",
@@ -609,12 +609,12 @@ window.mat101Chapter3 = [
     [
       "72",
       "108",
-      "180",
+      "144",
       "216"
     ],
     2,
     "α³+β³=(α+β)³−3αβ(α+β)=6³−3(4)(6)=216−72=144.",
-    "Use the cubic sum identity. (Check arithmetic carefully.)"
+    "Use S³−3PS for the sum of cubes."
   ],
   [
     "Quadratic functions · p.39–42",
@@ -654,8 +654,8 @@ window.mat101Chapter3 = [
       "7",
       "−3"
     ],
-    1,
-    "The perpendicular gradient is 3. Using (1,4): 4=3(1)+c, so c=1. Correct y-intercept is 1.",
+    0,
+    "The perpendicular gradient is 3. Using (1,4): 4=3(1)+c, so c=1.",
     "Take the negative reciprocal gradient and substitute the point."
   ],
   [
@@ -696,8 +696,8 @@ window.mat101Chapter3 = [
       "3",
       "7/2"
     ],
-    0,
-    "The midpoint input 7 lies halfway between 4 and 10, so the interpolated value is (−2+7)/2=2.5. Wait: 2.5=5/2.",
+    1,
+    "The midpoint input 7 lies halfway between 4 and 10, so the interpolated value is (−2+7)/2=5/2.",
     "At the midpoint, average the two endpoint values."
   ]
 ];
