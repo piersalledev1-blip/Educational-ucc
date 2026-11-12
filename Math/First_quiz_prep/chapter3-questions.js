@@ -25,7 +25,7 @@ window.mat101Chapter3 = [
   ],
   [
     "Linear functions · p.35–37",
-    "Challenging",
+    "Average",
     "A non-vertical line has gradient −3 and passes through (2,7). Which rule represents it?",
     [
       "f(x)=−3x+13",
