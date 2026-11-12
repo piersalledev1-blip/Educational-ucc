@@ -531,7 +531,7 @@ window.mat101Chapter2 = [
       "(−1,2]",
       "[−1,2)"
     ],
-    2,
+    1,
     "The common values are greater than −1 and at most 2.",
     "Keep the overlapping section and preserve endpoint inclusion.",
     {
@@ -729,18 +729,18 @@ window.mat101Chapter2 = [
     "A positive number multiplied by itself remains positive."
   ],
   [
-    "Number sets · p.19–25",
-    "Average",
-    "Which inclusion chain is correct?",
+    "Irrational numbers · p.25",
+    "Challenging",
+    "Which statement about the product of two irrational numbers is correct?",
     [
-      "N⊂W⊂Z⊂Q⊂R",
-      "R⊂Q⊂Z⊂W⊂N",
-      "W⊂N⊂Z⊂R⊂Q",
-      "Z⊂Q⊂N⊂W⊂R"
+      "It is always rational",
+      "It is always irrational",
+      "It may be rational or irrational",
+      "It is never real"
     ],
-    0,
-    "Natural numbers are contained in whole numbers, then integers, rationals and reals.",
-    "Use the nested number sets."
+    2,
+    "The product can be rational, as √3×√12=6, or irrational, as √2×√3=√6.",
+    "Test two examples: one rational product and one irrational product."
   ],
   [
     "Arithmetic–Geometric mean · p.26",
