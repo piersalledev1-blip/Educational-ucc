@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 4 — 50 original questions grounded in textbook pages 47–64. OCR-flagged exercises excluded. */
+/* MAT 101 Chapter 4 — 50 original questions. Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
 window.mat101Chapter4 = [
   [
     "Polynomial degree · p.47–49",
@@ -68,7 +68,21 @@ window.mat101Chapter4 = [
     ],
     2,
     "For large |x|, the graph increasingly resembles its leading term 7x⁵.",
-    "The highest-power term dominates for large magnitude inputs."
+    "The highest-power term dominates for large magnitude inputs.",
+    {
+      "type": "polyGraph",
+      "coefficients": [
+        7,
+        0,
+        -2,
+        0,
+        100
+      ],
+      "xMin": -2.5,
+      "xMax": 2.5,
+      "initial": 0,
+      "caption": "Explore how the leading term influences the two ends of the graph."
+    }
   ],
   [
     "Polynomial operations · p.49–50",
@@ -80,7 +94,7 @@ window.mat101Chapter4 = [
       "12",
       "14"
     ],
-    1,
+    2,
     "P(2)=11 and Q(2)=1, so the sum is 12. Correction: 11+1=12.",
     "Evaluate each polynomial first, then add."
   ],
@@ -250,7 +264,21 @@ window.mat101Chapter4 = [
     ],
     1,
     "An even multiplicity gives a repeated factor with even power, so the graph touches the axis and turns back rather than changing sign.",
-    "Even multiplicity means the sign does not change across the root."
+    "Even multiplicity means the sign does not change across the root.",
+    {
+      "type": "rootGraph",
+      "roots": [
+        4,
+        4,
+        -1,
+        -1,
+        -1
+      ],
+      "xMin": -3,
+      "xMax": 6,
+      "initial": 0,
+      "caption": "Observe how the curve behaves at roots with even and odd multiplicity."
+    }
   ],
   [
     "Multiplicity · p.52–53",
@@ -286,12 +314,12 @@ window.mat101Chapter4 = [
     "For P(x)=2x³+ax²−5x+3, x+1 is a factor. Find a.",
     [
       "−10",
-      "−4",
+      "−6",
       "4",
       "10"
     ],
-    2,
-    "P(−1)=−2+a+5+3=a+6=0, so a=−6. Correction: the correct option should be −6.",
+    1,
+    "P(−1)=−2+a+5+3=a+6. Since x+1 is a factor, P(−1)=0, so a=−6.",
     "Substitute −1 into P and set the result to zero."
   ],
   [
@@ -299,13 +327,13 @@ window.mat101Chapter4 = [
     "Challenging",
     "For P(x)=4x³−3x²+2x−7, what is the alternating sum of coefficients used to test x+1?",
     [
+      "−16",
       "−12",
       "−8",
-      "−4",
       "16"
     ],
-    1,
-    "P(−1)=−4−3−2−7=−16. The alternating sum from constant upward is −7−2−3−4=−16.",
+    0,
+    "P(−1)=−4−3−2−7=−16. This alternating coefficient sum equals P(−1).",
     "Evaluate P(−1), which is the alternating coefficient sum."
   ],
   [
@@ -332,8 +360,8 @@ window.mat101Chapter4 = [
       "t³+6t²−4t",
       "t³−3t²−4t+12"
     ],
-    0,
-    "P(t+3)=(t+3)³−3(t+3)²−4(t+3)+12=t³+6t²+9t+27−3t²−18t−27−4t−12+12=t³+3t²−13t. The listed choices do not match; revise options.",
+    1,
+    "Substitute x=t+3: P(t+3)=(t+3)³−3(t+3)²−4(t+3)+12=t³+6t²+5t.",
     "Substitute t+3 everywhere and expand carefully."
   ],
   [
@@ -376,7 +404,21 @@ window.mat101Chapter4 = [
     ],
     0,
     "x⁴−81=(x²−9)(x²+9)=(x−3)(x+3)(x²+9).",
-    "Use difference of squares twice."
+    "Use difference of squares twice.",
+    {
+      "type": "polyGraph",
+      "coefficients": [
+        1,
+        0,
+        0,
+        0,
+        -81
+      ],
+      "xMin": -4,
+      "xMax": 4,
+      "initial": 0,
+      "caption": "Explore the real x-intercepts of this difference-of-powers polynomial."
+    }
   ],
   [
     "Alternating coefficient test · p.54",
@@ -402,8 +444,8 @@ window.mat101Chapter4 = [
       "1",
       "2"
     ],
-    1,
-    "P(2)=8−16+2a+6=2a−2=0, so a=1. Correct option should be 1.",
+    2,
+    "P(2)=8−16+2a+6=2a−2. Setting P(2)=0 gives a=1.",
     "Set P(2)=0 and solve."
   ],
   [
@@ -428,10 +470,10 @@ window.mat101Chapter4 = [
       "1/2",
       "−2",
       "3/2",
-      "1/4"
+      "4/3"
     ],
     2,
-    "A reduced rational zero p/q must have p dividing 8 and q dividing 6. 3/2 is allowed because 3 divides neither 8 nor 6? p=3 does not divide 8, so it is not a candidate.",
+    "A reduced p/q must have p dividing 8 and q dividing 6. 1/2, −2 and 4/3 satisfy those divisibility conditions; 3/2 does not because 3 does not divide 8.",
     "Check numerator against factors of the constant and denominator against factors of the leading coefficient."
   ],
   [
@@ -640,8 +682,8 @@ window.mat101Chapter4 = [
       "x=−2t",
       "x=2t"
     ],
-    1,
-    "Let t=x+2, so x=t−2. Then P(t−2) has zero t=0. Correction: the correct substitution is x=t−2, option A.",
+    0,
+    "To move the zero x=−2 to t=0, set t=x+2. Thus x=t−2, and P(t−2) has zero t=0.",
     "Choose t=x−a when the known zero is a."
   ],
   [
@@ -670,7 +712,21 @@ window.mat101Chapter4 = [
     ],
     1,
     "A degree-n polynomial intersects any line in at most n points; six exceeds degree 4.",
-    "The number of intersections cannot exceed the degree."
+    "The number of intersections cannot exceed the degree.",
+    {
+      "type": "polyGraph",
+      "coefficients": [
+        1,
+        0,
+        0,
+        0,
+        -1
+      ],
+      "xMin": -2,
+      "xMax": 2,
+      "initial": 0,
+      "caption": "Inspect the number of intersections with the x-axis."
+    }
   ],
   [
     "Factor theorem · p.51–54",
