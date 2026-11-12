@@ -223,7 +223,12 @@ function explain(){
  f.replaceChildren();
  const h=document.createElement('h3');h.textContent=heading;f.append(h);
  const answer=document.createElement('p');answer.textContent='Correct option: '+'ABCD'[q[4]]+'. '+q[3][q[4]];f.append(answer);
- if(isCorrect&&!reviewMode){const note=document.createElement('p');note.textContent='Your answer is correct. Continue to the next question.';f.append(note);return}
+ if(isCorrect&&!reviewMode){
+  const note=document.createElement('p');note.textContent='Your answer is correct. Continue to the next question, or view the working if you want to check the method.';f.append(note);
+  const solutionButton=document.createElement('button');solutionButton.className='quiet solution-toggle';solutionButton.type='button';solutionButton.textContent='Show full solution';
+  solutionButton.onclick=()=>{solutionButton.classList.add('hidden');const theory=document.createElement('div');theory.className='solution';const th=document.createElement('strong');th.textContent='Exam / Theory Solution';theory.append(th);const tp=document.createElement('p');tp.textContent=q[5];theory.append(tp);if(q[7]){const d=document.createElement('div');d.className='solution';d.innerHTML='<strong>Venn Diagram</strong>'+vennSvg(q[7]);theory.append(d)}const quick=document.createElement('div');quick.className='solution';const qh=document.createElement('strong');qh.textContent='Quick Solution';quick.append(qh);const qp=document.createElement('p');qp.textContent=q[6];quick.append(qp);f.append(theory,quick)};
+  f.append(solutionButton);return
+ }
  const theory=document.createElement('div');theory.className='solution';
  const th=document.createElement('strong');th.textContent='Exam / Theory Solution';theory.append(th);
  const tp=document.createElement('p');tp.textContent=q[5];theory.append(tp);f.append(theory);
