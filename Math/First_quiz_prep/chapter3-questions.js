@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 3 — 50 original questions grounded in textbook pages 35–46. Optional visual key enables coded interactive diagrams. */
+/* MAT 101 Chapter 3 — 50 original questions grounded in textbook pages 35–46. */
 window.mat101Chapter3 = [
   [
     "Linear functions · p.35–37",
@@ -341,14 +341,14 @@ window.mat101Chapter3 = [
     "Challenging",
     "Find the greatest t such that x²−tx+4≥t for every real x.",
     [
-      "−4",
-      "2",
-      "4",
-      "8"
+      "−2−2√5",
+      "−2+2√5",
+      "2+2√5",
+      "4"
     ],
     1,
-    "Rewrite as x²−tx+(4−t)≥0. Require Δ≤0: t²−4(4−t)≤0, so (t+8)(t−4)≤0. Greatest t=4.",
-    "For an upward quadratic to be non-negative for all x, require its discriminant ≤0."
+    "Rewrite as x²−tx+(4−t)≥0. Since the leading coefficient is positive, require Δ≤0: t²−4(4−t)≤0, so t²+4t−16≤0. Its upper root is −2+2√5.",
+    "Set the discriminant ≤0 and solve the resulting quadratic inequality in t."
   ],
   [
     "Quadratic functions · p.39–42",
@@ -598,8 +598,8 @@ window.mat101Chapter3 = [
       "−3/5",
       "3/5"
     ],
-    1,
-    "1/α+1/β=(α+β)/(αβ)=(5/2)/(−3/2)=−5/3.",
+    0,
+    "For 2x²−5x−3=0, α+β=5/2 and αβ=−3/2. Therefore 1/α+1/β=(α+β)/(αβ)=−5/3.",
     "Use (α+β)/(αβ)=S/P."
   ],
   [
