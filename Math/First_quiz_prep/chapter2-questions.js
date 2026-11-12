@@ -44,7 +44,7 @@ window.mat101Chapter2 = [
   ],
   [
     "Number sets · p.19",
-    "Challenging",
+    "Average",
     "Which statement is always true for an integer n?",
     [
       "n/2 is an integer",
@@ -86,7 +86,7 @@ window.mat101Chapter2 = [
   ],
   [
     "Real-number properties · p.20–22",
-    "Challenging",
+    "Average",
     "A learner claims 4(x+3)=4x+3. Which value quickly disproves it?",
     [
       "x=0",
@@ -128,7 +128,7 @@ window.mat101Chapter2 = [
   ],
   [
     "Real-number properties · p.20–22",
-    "Challenging",
+    "Average",
     "For non-zero r, 7r=21. Which operation isolates r?",
     [
       "Add 7 to both sides",
