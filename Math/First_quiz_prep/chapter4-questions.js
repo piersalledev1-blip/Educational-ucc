@@ -825,7 +825,7 @@ window.mat101Chapter4 = [
   [
     "Factorisation of powers · p.56–57",
     "Average",
-    "For a positive integer n, when is xⁿ+aⁿ guaranteed to have x+a as a factor?",
+    "For a positive integer n and non-zero a, when is xⁿ+aⁿ guaranteed to have x+a as a factor?",
     ["When n is even", "When n is odd", "For every n", "Only when a=0"],
     1,
     "Substituting x=−a gives (−a)ⁿ+aⁿ=0 exactly when n is odd (for general non-zero a). By the Factor Theorem, x+a is then a factor.",
