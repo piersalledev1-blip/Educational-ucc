@@ -809,7 +809,7 @@ window.mat101Chapter3 = [
     "Quadratic from roots · p.43–45",
     "Challenging",
     "If α and β are roots of 2x²−3x−2=0, what is α³+β³?",
-    ["−117/8", "−45/8", "117/8", "45/8"],
+    ["−63/8", "−45/8", "63/8", "45/8"],
     2,
     "Vieta gives α+β=3/2 and αβ=−1. Then α³+β³=(α+β)³−3αβ(α+β)=27/8+9/2=63/8.",
     "Use α³+β³=(α+β)³−3αβ(α+β)."
@@ -818,7 +818,7 @@ window.mat101Chapter3 = [
     "Quadratic functions · p.39–42",
     "Challenging",
     "For what values of k is x²+2kx+k+5 strictly positive for every real x?",
-    ["k<−5", "k>−5", "−5<k<5", "k≤−5"],
+    ["(1−√21)/2<k<(1+√21)/2", "k≤(1−√21)/2 or k≥(1+√21)/2", "k<(1−√21)/2", "k>(1+√21)/2"],
     0,
     "The leading coefficient is positive. Strict positivity for all real x requires a negative discriminant: (2k)²−4(k+5)<0, so 4(k²−k−5)<0. Thus (1−√21)/2<k<(1+√21)/2.",
     "Require a>0 and discriminant less than zero, then solve the parameter inequality."
