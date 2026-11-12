@@ -110,7 +110,7 @@ window.mat101Chapter3 = [
   [
     "Linear functions · p.35–37",
     "Challenging",
-    "Line L has gradient −2 and passes through (3,1). At what x-coordinate does it cross the y-axis?",
+    "What is the y-intercept of the line with gradient −2 passing through (3,1)?",
     [
       "−5",
       "−2",
