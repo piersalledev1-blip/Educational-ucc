@@ -105,7 +105,7 @@ function save(){
   renderDashboard();
 }
 function stop(){}
-function run(){if(deadlineInterval===null){deadlineInterval=setInterval(enforceTimeLimit,1000)}enforceTimeLimit()}
+function run(){if(quizEnded)return;if(deadlineInterval===null){deadlineInterval=setInterval(enforceTimeLimit,1000)}enforceTimeLimit()}
 function enforceTimeLimit(){if(quizEnded||!quizDeadline||Date.now()<quizDeadline)return;quizEnded=true;if(deadlineInterval!==null){clearInterval(deadlineInterval);deadlineInterval=null}for(let n=0;n<qs.length;n++){if(!answers[n])answers[n]={choice:null,correct:false,timeout:true}}i=qs.length;checkpointPending=false;reviewMode=false;save();result(true)}
 
 function start(chapter="ch1"){
