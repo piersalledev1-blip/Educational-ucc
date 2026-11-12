@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 2 — 58 original questions. Textbook-grounded and independently checked; no textbook exercise stems copied. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
+// Expanded, textbook-aligned MAT 101 question bank.
 window.mat101Chapter2 = [
   [
     "Number sets · p.19",
@@ -390,20 +390,12 @@ window.mat101Chapter2 = [
     ],
     0,
     "|x+2|=6 gives x=4 or x=−8.",
-    "Move six units left and right from −2.",
-    {
-      "type": "numberLine",
-      "min": -10,
-      "max": 10,
-      "initial": -2,
-      "center": -2,
-      "caption": "Move the point and compare its distance from −2."
-    }
+    "Move six units left and right from −2."
   ],
   [
     "Absolute value · p.27–28",
     "Challenging",
-    "Simplify √((x−7)²) for real x.",
+    "Simplify √((x − 7)²) for real x.",
     [
       "x−7",
       "7−x",
@@ -411,8 +403,8 @@ window.mat101Chapter2 = [
       "(x−7)²"
     ],
     2,
-    "The principal square root of a square equals the absolute value.",
-    "The result must be non-negative for every real x."
+    "For any real x, √((x − 7)²) equals the absolute value of x − 7. Therefore the simplified form is |x − 7|.",
+    "Use √(u²)=|u| for real u."
   ],
   [
     "Absolute value · p.27–28",
@@ -426,16 +418,7 @@ window.mat101Chapter2 = [
     ],
     0,
     "|x−3|≤4 gives −4≤x−3≤4, so −1≤x≤7.",
-    "Translate distance at most four into a double inequality.",
-    {
-      "type": "numberLine",
-      "min": -5,
-      "max": 11,
-      "initial": 3,
-      "center": 3,
-      "radius": 4,
-      "caption": "Explore values around the centre and the distance limit."
-    }
+    "Translate distance at most four into a double inequality."
   ],
   [
     "Absolute value · p.27–28",
@@ -533,20 +516,7 @@ window.mat101Chapter2 = [
     ],
     1,
     "The common values are greater than −1 and at most 2.",
-    "Keep the overlapping section and preserve endpoint inclusion.",
-    {
-      "type": "numberLine",
-      "min": -5,
-      "max": 6,
-      "initial": 0,
-      "marks": [
-        -4,
-        -1,
-        2,
-        5
-      ],
-      "caption": "Use the marked endpoints to reason about interval overlap."
-    }
+    "Keep the overlapping section and preserve endpoint inclusion."
   ],
   [
     "Intervals · p.29–31",
@@ -616,15 +586,7 @@ window.mat101Chapter2 = [
     ],
     1,
     "The product is positive outside the roots −4 and 3.",
-    "A two-factor product with positive leading coefficient is positive outside the roots.",
-    {
-      "type": "signChart",
-      "roots": [
-        -4,
-        3
-      ],
-      "caption": "Tap each interval to record the sign you predict for the product."
-    }
+    "A two-factor product with positive leading coefficient is positive outside the roots."
   ],
   [
     "Inequalities · p.30–32",
@@ -666,16 +628,7 @@ window.mat101Chapter2 = [
     ],
     0,
     "The critical values are −2, 1/2 and 3. A sign chart gives positive values on (−∞,−2) and (1/2,3).",
-    "Mark the three zeros and test the sign in each interval.",
-    {
-      "type": "signChart",
-      "roots": [
-        -2,
-        0.5,
-        3
-      ],
-      "caption": "Tap each interval to build your sign chart for the three factors."
-    }
+    "Mark the three zeros and test the sign in each interval."
   ],
   [
     "Rational inequalities · p.31–32",
@@ -703,16 +656,7 @@ window.mat101Chapter2 = [
     ],
     0,
     "Using the positive squared common denominator gives (2x−1)(3−x)(x+2)>0. The solution is x<−2 or 1/2<x<3; exclude the original denominator zeros.",
-    "Multiply by the square of the denominators, then use a sign chart.",
-    {
-      "type": "signChart",
-      "roots": [
-        -2,
-        0.5,
-        3
-      ],
-      "caption": "Record the sign on each interval before selecting a solution."
-    }
+    "Multiply by the square of the denominators, then use a sign chart."
   ],
   [
     "Inequalities · p.30–32",
@@ -755,14 +699,17 @@ window.mat101Chapter2 = [
     0,
     "AM–GM gives √pq≤9, so pq≤81.",
     "The greatest product for a fixed positive sum occurs when the values are equal."
-  ]
-,
-
+  ],
   [
     "Real-number properties · p.20–22",
     "Average",
     "Which statement follows from closure of the real numbers under subtraction?",
-    ["a−b is real for all real a,b", "a/b is real even when b=0", "√a is real for every real a", "a+b is never zero"],
+    [
+      "a−b is real for all real a,b",
+      "a/b is real even when b=0",
+      "√a is real for every real a",
+      "a+b is never zero"
+    ],
     0,
     "The real numbers are closed under subtraction: if a and b are real, then a−b is also real.",
     "Subtracting two real numbers always gives a real number."
@@ -771,7 +718,12 @@ window.mat101Chapter2 = [
     "Real-number properties · p.20–22",
     "Challenging",
     "If 7x+5=7y+5, which conclusion follows using the cancellation properties of equality?",
-    ["x=y", "x=y+5", "7x=7y+5", "x−y=5"],
+    [
+      "x=y",
+      "x=y+5",
+      "7x=7y+5",
+      "x−y=5"
+    ],
     0,
     "Subtract 5 from both sides to obtain 7x=7y. Since 7 is non-zero, divide both sides by 7 to get x=y.",
     "Cancel the equal added terms, then divide by the common non-zero factor."
@@ -780,7 +732,12 @@ window.mat101Chapter2 = [
     "Real-number properties · p.20–22",
     "Average",
     "What is the multiplicative inverse of −8?",
-    ["8", "−1/8", "1/8", "−8"],
+    [
+      "8",
+      "−1/8",
+      "1/8",
+      "−8"
+    ],
     1,
     "The multiplicative inverse of a non-zero number a is 1/a. Therefore the inverse of −8 is −1/8.",
     "Take the reciprocal, keeping the negative sign."
@@ -789,7 +746,12 @@ window.mat101Chapter2 = [
     "Order properties · p.25–26",
     "Challenging",
     "If a<b and b<c, which statement must be true?",
-    ["a<c", "a>c", "a=c", "The order of a and c cannot be determined"],
+    [
+      "a<c",
+      "a>c",
+      "a=c",
+      "The order of a and c cannot be determined"
+    ],
     0,
     "By the transitive property of order, a<b and b<c imply a<c.",
     "Combine the two inequalities using transitivity."
@@ -798,7 +760,12 @@ window.mat101Chapter2 = [
     "Order properties · p.25–26",
     "Challenging",
     "For any two real numbers a and b, which statement expresses the trichotomy property?",
-    ["At least two of a=b, a<b and a>b must hold", "Exactly one of a=b, a<b and a>b holds", "a must be positive or b must be positive", "a and b must have the same sign"],
+    [
+      "At least two of a=b, a<b and a>b must hold",
+      "Exactly one of a=b, a<b and a>b holds",
+      "a must be positive or b must be positive",
+      "a and b must have the same sign"
+    ],
     1,
     "Trichotomy states that exactly one of equality, less than, or greater than holds for any two real numbers.",
     "Two real numbers have exactly one of the three possible order relationships."
@@ -807,7 +774,12 @@ window.mat101Chapter2 = [
     "Irrational numbers · p.25",
     "Challenging",
     "Given that √11 is irrational, which expression is guaranteed to be irrational?",
-    ["5+3√11", "5−√121", "3√11−3√11", "√11×√11"],
+    [
+      "5+3√11",
+      "5−√121",
+      "3√11−3√11",
+      "√11×√11"
+    ],
     0,
     "For rational a and non-zero rational c, a+c√b is irrational whenever √b is irrational. Here 5 and 3 are rational and 3 is non-zero.",
     "A rational number plus a non-zero rational multiple of an irrational radical remains irrational."
@@ -816,7 +788,12 @@ window.mat101Chapter2 = [
     "Absolute value · p.26–27",
     "Challenging",
     "If a=−3 and b=4, what common value is given by |ab| and |a||b|?",
-    ["−12", "−7", "7", "12"],
+    [
+      "−12",
+      "−7",
+      "7",
+      "12"
+    ],
     3,
     "|ab|=|−12|=12, while |a||b|=3×4=12. This illustrates |ab|=|a||b|.",
     "Take the absolute value of the product, or multiply the two absolute values."
@@ -825,7 +802,12 @@ window.mat101Chapter2 = [
     "Intervals · p.29–31",
     "Average",
     "What is the length of the interval (−3,5), using the textbook's definition of interval length?",
-    ["2", "5", "8", "−8"],
+    [
+      "2",
+      "5",
+      "8",
+      "−8"
+    ],
     2,
     "The length of an interval with endpoints a and b is b−a. Here 5−(−3)=8.",
     "Subtract the left endpoint from the right endpoint."
