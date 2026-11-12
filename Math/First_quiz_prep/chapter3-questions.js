@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 3 — 50 original questions grounded in textbook pages 35–46. */
+/* MAT 101 Chapter 3 — 50 original questions. Source-aligned; question stems are original applications, not copied textbook exercises. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
 window.mat101Chapter3 = [
   [
     "Linear functions · p.35–37",
@@ -12,7 +12,16 @@ window.mat101Chapter3 = [
     ],
     2,
     "m=(5−(−3))/(2−0)=8/2=4.",
-    "Rise divided by run."
+    "Rise divided by run.",
+    {
+      "type": "linearGraph",
+      "m": 4,
+      "c": -3,
+      "xMin": -2,
+      "xMax": 4,
+      "initial": 0,
+      "caption": "Move x along the line and observe how the output changes."
+    }
   ],
   [
     "Linear functions · p.35–37",
@@ -108,9 +117,18 @@ window.mat101Chapter3 = [
       "5",
       "7"
     ],
-    2,
+    3,
     "y=−2(x−3)+1=−2x+7, so the y-intercept is 7.",
-    "Set x=0 in the point-gradient equation."
+    "Set x=0 in the point-gradient equation.",
+    {
+      "type": "linearGraph",
+      "m": -2,
+      "c": 7,
+      "xMin": -2,
+      "xMax": 5,
+      "initial": 0,
+      "caption": "Explore where the line crosses each axis."
+    }
   ],
   [
     "Linear functions · p.35–37",
@@ -250,7 +268,17 @@ window.mat101Chapter3 = [
     ],
     1,
     "The vertex form gives (4,9); the negative coefficient makes it a maximum.",
-    "Read the vertex and inspect the sign of the squared term."
+    "Read the vertex and inspect the sign of the squared term.",
+    {
+      "type": "quadraticGraph",
+      "a": -2,
+      "b": 16,
+      "c": -23,
+      "xMin": 0,
+      "xMax": 8,
+      "initial": 4,
+      "caption": "Move along the parabola and inspect its turning point."
+    }
   ],
   [
     "Quadratic functions · p.38–41",
@@ -278,7 +306,17 @@ window.mat101Chapter3 = [
     ],
     2,
     "Δ=6²−4(1)(13)=−16<0. Since a>0, the quadratic is strictly positive for all real x.",
-    "Use the discriminant, then the sign of the leading coefficient."
+    "Use the discriminant, then the sign of the leading coefficient.",
+    {
+      "type": "quadraticGraph",
+      "a": 1,
+      "b": 6,
+      "c": 13,
+      "xMin": -8,
+      "xMax": 2,
+      "initial": -3,
+      "caption": "Inspect the shape and vertical position of this quadratic."
+    }
   ],
   [
     "Quadratic functions · p.39–41",
@@ -299,13 +337,13 @@ window.mat101Chapter3 = [
     "Challenging",
     "For which values of t does x²+tx+9 have two distinct real roots?",
     [
-      "−6<t<6",
+      "t<−6 or t>6",
       "t≤−6 or t≥6",
-      "t=±6",
+      "t=−6 or t=6",
       "All real t"
     ],
-    1,
-    "Two distinct real roots require Δ=t²−36>0, hence t<−6 or t>6.",
+    0,
+    "Two distinct real roots require Δ=t²−36>0, so t<−6 or t>6.",
     "Set the discriminant strictly greater than zero."
   ],
   [
@@ -334,7 +372,17 @@ window.mat101Chapter3 = [
     ],
     1,
     "Δ=(−4)²−4(4)(1)=0, so there is one repeated root and the graph touches the axis.",
-    "A zero discriminant gives a repeated root."
+    "A zero discriminant gives a repeated root.",
+    {
+      "type": "quadraticGraph",
+      "a": 4,
+      "b": -4,
+      "c": 1,
+      "xMin": -1,
+      "xMax": 2,
+      "initial": 0.5,
+      "caption": "Explore the repeated x-intercept on this parabola."
+    }
   ],
   [
     "Quadratic functions · p.39–42",
@@ -404,7 +452,17 @@ window.mat101Chapter3 = [
     ],
     1,
     "A repeated root at −3 gives 2(x+3)².",
-    "Use a(x−r)² for a repeated root r."
+    "Use a(x−r)² for a repeated root r.",
+    {
+      "type": "quadraticGraph",
+      "a": 2,
+      "b": 12,
+      "c": 18,
+      "xMin": -7,
+      "xMax": 1,
+      "initial": -3,
+      "caption": "Inspect the repeated root and the direction of the curve."
+    }
   ],
   [
     "Quadratic functions · p.38–41",
