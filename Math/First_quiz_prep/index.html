@@ -32,7 +32,7 @@
 
 .progress-meta{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:12px;color:var(--muted);margin-top:auto}.progress-meta strong{color:var(--ink)}.progress-track{height:7px;background:#e7ebf3;border-radius:99px;overflow:hidden;margin:8px 0 0}.progress-fill{height:100%;background:var(--blue);border-radius:99px;transition:width .2s ease}.card.completed{border-color:#8fd0b2;background:#f4fbf7}.card.completed .num,.card.completed .progress-meta strong{color:var(--green)}.completed-badge{font-size:11px;font-weight:800;color:var(--green);letter-spacing:.04em}.combined-card{grid-column:1/-1}.combined-card p{max-width:720px}[data-theme="dark"] .card.completed{background:#17382f;border-color:#286c56}[data-theme="dark"] .progress-track{background:#303b50}
 .venn-wrap{margin:12px 0 4px;overflow-x:auto}.venn{display:block;width:100%;max-width:520px;min-width:300px;height:auto;margin:auto;color:var(--ink)}.venn-note{font-size:.88rem;line-height:1.45;margin:8px 2px 0;color:var(--muted)}.solution p{white-space:pre-wrap}</style></head><body><div class="wrap">
-<header class="top"><div class="brand">MAT<span>101</span> / PREP</div><div class="topright"><span class="pill" id="badge">Saved on this device</span><button class="theme-toggle" id="theme-toggle" type="button">☾ Dark mode</button></div></header>
+<header class="top"><div class="brand">MAT<span>101</span> / PREP</div><div class="topright"><span class="pill overall-performance" id="overall-performance" title="Unique questions attempted across all 224 questions" aria-label="Overall performance: 0%">Overall: 0%</span><span class="pill" id="badge">Saved on this device</span><button class="theme-toggle" id="theme-toggle" type="button">☾ Dark mode</button></div></header>
 <main id="home"><section class="hero"><div class="eyebrow">University mathematics · UCC</div><h1>Lets do our best</h1><p class="muted">Practise the MAT 101 textbook chapters with objective questions, clear solutions and progress checkpoints.</p><p class="small" style="margin-top:10px"><a href="https://drive.google.com/drive/folders/1y_heT0SOlIEVok_DWQEro_ptbjFI-cvJ?usp=sharing" target="_blank" rel="noopener noreferrer" style="color:var(--muted);text-decoration:underline;text-underline-offset:3px">Browse and download resources from my drive</a></p></section>
 
 
@@ -75,6 +75,42 @@ function readState(chapter){
   try{return JSON.parse(localStorage.getItem('math101-'+chapter)||'null')}catch(error){return null}
 }
 function answeredCount(state,total){return Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a&&!a.timeout).length:0)}
+const GLOBAL_TAKEN_KEY='math101-global-taken-v1';
+function readGlobalTaken(){
+  try{const value=JSON.parse(localStorage.getItem(GLOBAL_TAKEN_KEY)||'[]');return new Set(Array.isArray(value)?value.filter(id=>combinedById.has(id)):[])}catch(error){return new Set()}
+}
+function saveGlobalTaken(taken){
+  try{localStorage.setItem(GLOBAL_TAKEN_KEY,JSON.stringify([...taken]))}catch(error){}
+}
+function migratePreviousAttempts(){
+  const taken=readGlobalTaken();
+  Object.keys(chapterTotals).forEach(chapter=>{
+    const state=readState(chapter);
+    if(!state||!Array.isArray(state.answers))return;
+    state.answers.forEach((answer,index)=>{
+      if(!answer||answer.timeout)return;
+      const id=chapter==='combined'?state.order?.[index]:chapter+'-'+index;
+      if(id&&combinedById.has(id))taken.add(id);
+    });
+  });
+  saveGlobalTaken(taken);
+  return taken;
+}
+let globalTaken=migratePreviousAttempts();
+function recordQuestionTaken(){
+  const id=activeChapter==='combined'?activeOrder?.[i]:activeChapter+'-'+i;
+  if(!id||!combinedById.has(id)||globalTaken.has(id))return;
+  globalTaken.add(id);
+  saveGlobalTaken(globalTaken);
+  renderOverallPerformance();
+}
+function renderOverallPerformance(){
+  const el=$('overall-performance');
+  if(!el)return;
+  const percent=Math.round(globalTaken.size/chapterTotals.combined*100);
+  el.textContent='Overall: '+percent+'%';
+  el.setAttribute('aria-label','Overall performance: '+percent+'%');
+}
 function progressInfo(chapter){
   const total=chapterTotals[chapter],state=readState(chapter),correct=Math.min(total,Array.isArray(state?.answers)?state.answers.filter(a=>a?.correct).length:0);
   const reached=Math.min(total,Math.max(Number(state?.maxReached)||0,Number(state?.i)||0,answeredCount(state,total)));
@@ -206,7 +242,7 @@ function advanceQuestion(){
   checkpointPending=false;save();draw();run()
 }
 function revealAnswer(answer){
-  answers[i]=answer;shown=true;
+  answers[i]=answer;shown=true;recordQuestionTaken();
   if(!answer.correct)stop();
   const q=qs[i];
   [...$('options').children].forEach((button,n)=>{
@@ -220,7 +256,7 @@ function revealAnswer(answer){
 }
 $('submit').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode||selectedChoice===null)return;let q=qs[i];revealAnswer({choice:selectedChoice,correct:selectedChoice===q[4]})};
 $('dont-know').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode)return;revealAnswer({choice:null,correct:false,unknown:true})};
-$('skip').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode)return;answers[i]={choice:null,correct:false,skipped:true};shown=true;advanceQuestion()};
+$('skip').onclick=()=>{enforceTimeLimit();if(quizEnded||shown||reviewMode)return;answers[i]={choice:null,correct:false,skipped:true};shown=true;recordQuestionTaken();advanceQuestion()};
 $('next').onclick=()=>{enforceTimeLimit();if(quizEnded)return;if(reviewMode){if(i>=qs.length-1){result(false);return}i++;draw();stop();return}advanceQuestion()};
 $('review-prev').onclick=()=>{if(!reviewMode)return;i=Math.max(0,i-1);draw();stop()};
 $('review-return').onclick=()=>{if(reviewMode)result(false)};
@@ -276,5 +312,6 @@ function result(timeExpired=false){
   save()
 }
 renderDashboard();
+renderOverallPerformance();
 $('badge').textContent='Saved on this device';
 </script><script>(()=>{const key='mat101-theme';const btn=document.getElementById('theme-toggle');if(!btn)return;function apply(theme){document.documentElement.dataset.theme=theme;btn.textContent=theme==='dark'?'☀ Light mode':'☾ Dark mode';btn.setAttribute('aria-label',theme==='dark'?'Switch to light mode':'Switch to dark mode');btn.setAttribute('aria-pressed',String(theme==='dark'));try{localStorage.setItem(key,theme)}catch(e){}}apply(document.documentElement.dataset.theme||'light');btn.addEventListener('click',()=>apply(document.documentElement.dataset.theme==='dark'?'light':'dark'))})();</script></body></html>
