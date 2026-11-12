@@ -1,4 +1,4 @@
-/* MAT 101 Chapter 3 — 58 original questions. Textbook-grounded and independently checked; no textbook exercise stems copied. Fields: topic, difficulty, prompt, options, answer index, worked solution, quick solution, optional coded visual descriptor. */
+// Expanded, textbook-aligned MAT 101 question bank.
 window.mat101Chapter3 = [
   [
     "Linear functions · p.35–37",
@@ -12,16 +12,7 @@ window.mat101Chapter3 = [
     ],
     2,
     "m=(5−(−3))/(2−0)=8/2=4.",
-    "Rise divided by run.",
-    {
-      "type": "linearGraph",
-      "m": 4,
-      "c": -3,
-      "xMin": -2,
-      "xMax": 4,
-      "initial": 0,
-      "caption": "Move x along the line and observe how the output changes."
-    }
+    "Rise divided by run."
   ],
   [
     "Linear functions · p.35–37",
@@ -119,16 +110,7 @@ window.mat101Chapter3 = [
     ],
     3,
     "y=−2(x−3)+1=−2x+7, so the y-intercept is 7.",
-    "Set x=0 in the point-gradient equation.",
-    {
-      "type": "linearGraph",
-      "m": -2,
-      "c": 7,
-      "xMin": -2,
-      "xMax": 5,
-      "initial": 0,
-      "caption": "Explore where the line crosses each axis."
-    }
+    "Set x=0 in the point-gradient equation."
   ],
   [
     "Linear functions · p.35–37",
@@ -268,17 +250,7 @@ window.mat101Chapter3 = [
     ],
     1,
     "The vertex form gives (4,9); the negative coefficient makes it a maximum.",
-    "Read the vertex and inspect the sign of the squared term.",
-    {
-      "type": "quadraticGraph",
-      "a": -2,
-      "b": 16,
-      "c": -23,
-      "xMin": 0,
-      "xMax": 8,
-      "initial": 4,
-      "caption": "Move along the parabola and inspect its turning point."
-    }
+    "Read the vertex and inspect the sign of the squared term."
   ],
   [
     "Quadratic functions · p.38–41",
@@ -306,17 +278,7 @@ window.mat101Chapter3 = [
     ],
     2,
     "Δ=6²−4(1)(13)=−16<0. Since a>0, the quadratic is strictly positive for all real x.",
-    "Use the discriminant, then the sign of the leading coefficient.",
-    {
-      "type": "quadraticGraph",
-      "a": 1,
-      "b": 6,
-      "c": 13,
-      "xMin": -8,
-      "xMax": 2,
-      "initial": -3,
-      "caption": "Inspect the shape and vertical position of this quadratic."
-    }
+    "Use the discriminant, then the sign of the leading coefficient."
   ],
   [
     "Quadratic functions · p.39–41",
@@ -372,17 +334,7 @@ window.mat101Chapter3 = [
     ],
     1,
     "Δ=(−4)²−4(4)(1)=0, so there is one repeated root and the graph touches the axis.",
-    "A zero discriminant gives a repeated root.",
-    {
-      "type": "quadraticGraph",
-      "a": 4,
-      "b": -4,
-      "c": 1,
-      "xMin": -1,
-      "xMax": 2,
-      "initial": 0.5,
-      "caption": "Explore the repeated x-intercept on this parabola."
-    }
+    "A zero discriminant gives a repeated root."
   ],
   [
     "Quadratic functions · p.39–42",
@@ -452,17 +404,7 @@ window.mat101Chapter3 = [
     ],
     1,
     "A repeated root at −3 gives 2(x+3)².",
-    "Use a(x−r)² for a repeated root r.",
-    {
-      "type": "quadraticGraph",
-      "a": 2,
-      "b": 12,
-      "c": 18,
-      "xMin": -7,
-      "xMax": 1,
-      "initial": -3,
-      "caption": "Inspect the repeated root and the direction of the curve."
-    }
+    "Use a(x−r)² for a repeated root r."
   ],
   [
     "Quadratic functions · p.38–41",
@@ -757,14 +699,17 @@ window.mat101Chapter3 = [
     1,
     "The midpoint input 7 lies halfway between 4 and 10, so the interpolated value is (−2+7)/2=5/2.",
     "At the midpoint, average the two endpoint values."
-  ]
-,
-
+  ],
   [
     "Linear functions · p.35–37",
     "Average",
     "A linear function has a positive gradient. How does its value change as x increases?",
-    ["It decreases", "It increases", "It remains constant", "It becomes undefined"],
+    [
+      "It decreases",
+      "It increases",
+      "It remains constant",
+      "It becomes undefined"
+    ],
     1,
     "For a positive gradient m, x₁<x₂ implies f(x₁)<f(x₂). Therefore the function is increasing.",
     "A positive gradient means the line rises from left to right."
@@ -773,7 +718,12 @@ window.mat101Chapter3 = [
     "Quadratic functions · p.38–40",
     "Average",
     "Write f(x)=3x²+6x−2 as a translated form of 3x². Which translation vector is correct?",
-    ["(1,−5)", "(−1,−5)", "(−1,5)", "(1,5)"],
+    [
+      "(1,−5)",
+      "(−1,−5)",
+      "(−1,5)",
+      "(1,5)"
+    ],
     1,
     "Complete the square: 3x²+6x−2=3(x²+2x)−2=3(x+1)²−5. The graph of y=3x² is translated by (−1,−5).",
     "Complete the square, then read the horizontal and vertical shifts."
@@ -782,7 +732,12 @@ window.mat101Chapter3 = [
     "Quadratic from roots · p.43–45",
     "Challenging",
     "The roots α and β of x²−5x+6=0 are used to form a new monic quadratic with roots (α+β)² and (α−β)². What is the new equation?",
-    ["x²−26x+25=0", "x²−25x+26=0", "x²−10x+9=0", "x²+26x+25=0"],
+    [
+      "x²−26x+25=0",
+      "x²−25x+26=0",
+      "x²−10x+9=0",
+      "x²+26x+25=0"
+    ],
     0,
     "Vieta gives α+β=5 and αβ=6. Thus (α+β)²=25 and (α−β)²=(α+β)²−4αβ=25−24=1. The new equation is (x−25)(x−1)=x²−26x+25=0.",
     "Find the sum and product of the original roots, then calculate the two transformed roots."
@@ -791,7 +746,12 @@ window.mat101Chapter3 = [
     "Quadratic from roots · p.43–45",
     "Challenging",
     "Let m and n be the roots of 3x²−2x−1=0. A monic quadratic has roots 1/m³ and 1/n³. Which equation is it?",
-    ["x²−26x−27=0", "x²+26x−27=0", "x²−26x+27=0", "x²+2x−1=0"],
+    [
+      "x²−26x−27=0",
+      "x²+26x−27=0",
+      "x²−26x+27=0",
+      "x²+2x−1=0"
+    ],
     1,
     "Vieta gives m+n=2/3 and mn=−1/3. Then m³+n³=(m+n)³−3mn(m+n)=26/27 and (mn)³=−1/27. The sum of the new roots is (m³+n³)/(mn)³=−26, and their product is 1/(mn)³=−27. Hence the equation is x²+26x−27=0.",
     "Use Vieta first, calculate the sum and product of the reciprocal cubes, then form x²−Sx+P=0."
@@ -800,7 +760,12 @@ window.mat101Chapter3 = [
     "Quadratic functions · p.38–40",
     "Challenging",
     "For f(x)=−2x²+8x−1, which vector translates the graph of y=−2x² to the graph of y=f(x)?",
-    ["(2,7)", "(−2,7)", "(2,−7)", "(−2,−7)"],
+    [
+      "(2,7)",
+      "(−2,7)",
+      "(2,−7)",
+      "(−2,−7)"
+    ],
     0,
     "Complete the square: −2x²+8x−1=−2(x−2)²+7. Therefore the translation vector is (2,7).",
     "Rewrite in the form a(x−p)²+q; the translation is (p,q)."
@@ -809,7 +774,12 @@ window.mat101Chapter3 = [
     "Quadratic from roots · p.43–45",
     "Challenging",
     "If α and β are roots of 2x²−3x−2=0, what is α³+β³?",
-    ["−63/8", "−45/8", "63/8", "45/8"],
+    [
+      "−63/8",
+      "−45/8",
+      "63/8",
+      "45/8"
+    ],
     2,
     "Vieta gives α+β=3/2 and αβ=−1. Then α³+β³=(α+β)³−3αβ(α+β)=27/8+9/2=63/8.",
     "Use α³+β³=(α+β)³−3αβ(α+β)."
@@ -818,7 +788,12 @@ window.mat101Chapter3 = [
     "Quadratic functions · p.39–42",
     "Challenging",
     "For what values of k is x²+2kx+k+5 strictly positive for every real x?",
-    ["(1−√21)/2<k<(1+√21)/2", "k≤(1−√21)/2 or k≥(1+√21)/2", "k<(1−√21)/2", "k>(1+√21)/2"],
+    [
+      "(1−√21)/2<k<(1+√21)/2",
+      "k≤(1−√21)/2 or k≥(1+√21)/2",
+      "k<(1−√21)/2",
+      "k>(1+√21)/2"
+    ],
     0,
     "The leading coefficient is positive. Strict positivity for all real x requires a negative discriminant: (2k)²−4(k+5)<0, so 4(k²−k−5)<0. Thus (1−√21)/2<k<(1+√21)/2.",
     "Require a>0 and discriminant less than zero, then solve the parameter inequality."
@@ -827,7 +802,12 @@ window.mat101Chapter3 = [
     "Linear functions · p.35–37",
     "Challenging",
     "A non-constant linear function has the same output for two different real inputs. Which statement about this situation agrees with the chapter?",
-    ["It is possible for every linear function", "It contradicts the one-to-one property", "It means the gradient is positive", "It means the graph is vertical"],
+    [
+      "It is possible for every linear function",
+      "It contradicts the one-to-one property",
+      "It means the gradient is positive",
+      "It means the graph is vertical"
+    ],
     1,
     "A non-constant linear function is one-to-one on ℝ, so distinct inputs cannot have the same output.",
     "One-to-one means equal outputs require equal inputs."
