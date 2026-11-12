@@ -30,7 +30,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Polynomial degree · p.47–49",
-    "Challenging",
+    "Average",
     "P has degree 6 and Q has degree 3. What is the degree of P+Q?",
     [
       "3",
@@ -185,7 +185,7 @@ window.mat101Chapter4 = [
   ],
   [
     "Factor theorem · p.51–52",
-    "Challenging",
+    "Average",
     "For P(x)=x³+kx²−4x−4, x=−1 is a zero. Find k.",
     [
       "−1",
